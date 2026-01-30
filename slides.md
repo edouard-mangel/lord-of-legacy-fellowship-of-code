@@ -78,18 +78,18 @@ La Comté c'est le projet qui démarre. Le backlog est vide, le repo est propre,
 -->
 
 --- 
+layout: image-right
+image: images/bilbo_baggins.jpg
+---
 
 # Bilbo s'en va
 
 ## Le départ du dev senior
 
-<!-- Image suggestion : Bilbo qui disparaît à sa fête -->
-
 <v-clicks>
 
-- Il a tout construit
-- Il connaît tous les secrets
-- Il part "pour écrire ses mémoires"
+- Il a tout construit, il connaît tous les secrets.
+- Il part pour "faire un métier qui a du sens"
 - Il laisse ses affaires à son mentoré, Frodon
 
 </v-clicks>
@@ -135,19 +135,31 @@ image: /images/Gandalf_the_Grey.webp
 
 # Gandalf le gris
 
+<v-click>
+
 ## Engineering manager et mentor de Bilbo
+</v-click>
+
 
 <v-clicks>
 
-- Contributeur Unix, 
+- Contributeur Unix
 - Dernier dev de l'entreprise présent à sa création
-- A mené de nombreuses batailles, 
+- A mené de nombreuses batailles contre la complexité
 - Tech lead originel du framework maison
+- **Il sait que Sauron a forgé l'Anneau**
 
 </v-clicks>
 
-<!--
+<v-click>
 
+*"Sauron a créé cet Anneau. Sa complexité grandit chaque jour. Il doit être détruit."*
+
+</v-click>
+
+<!--
+Gandalf connaît le vrai ennemi : Sauron, l'architecte de la complexité.
+Il a vu comment l'Anneau corrompt les systèmes.
 -->
 
 ---
@@ -157,8 +169,15 @@ image: /images/Gandalf_the_Grey.webp
 
 # Gandalf le gris
 
-## "Ne touche pas à ça Bilbo"
+## "Ne touche pas à ça Frodon"
 
+<v-click>
+
+Nous verrons plus tard. 
+
+Il y a beaucoup de choses à faire avant de pouvoir s'en préoccuper. 
+
+</v-click>
 
 <!--
 
@@ -167,12 +186,17 @@ image: /images/Gandalf_the_Grey.webp
 
 
 ---
+layout: image-right
+backgroundSize: contain
+image: /images/Frodo-and-Sam-prod-incident.jpg
+
+---
 
 # Les Cavaliers Noirs
 
-## Les incidents de production
+## Les bugs de régression
 
-<!-- Image suggestion : Nazgûl à cheval -->
+**Les Nazgûl sont les agents de Sauron.**
 
 <v-clicks>
 
@@ -180,18 +204,15 @@ image: /images/Gandalf_the_Grey.webp
 - Ils arrivent toujours le vendredi
 - Ils ne meurent jamais vraiment
 - Ils sentent la peur (et les déploiements)
+- **Ils chassent ceux qui touchent à l'Anneau**
 
 </v-clicks>
 
-<v-click>
-
-*"Je sens... un déploiement en production."*
-
-</v-click>
-
 <!--
-Les Nazgûl sont attirés par l'Anneau comme les incidents sont attirés par la dette technique.
-Tu crois les avoir vaincus, ils reviennent.
+Les Nazgûl sont les serviteurs de Sauron.
+Ils chassent quiconque essaie de modifier l'Anneau (refactorer le couplage).
+Les incidents de production sont la façon dont Sauron défend son architecture.
+Tu crois les avoir vaincus, ils reviennent - car Sauron les rappelle toujours.
 -->
 
 ---
@@ -222,8 +243,12 @@ Qui a déjà été appelé à 3h du mat pour un incident dont le runbook date de
 -->
 
 ---
+layout: image-right
+image: /images/Aragorn.png
+backgroundSize: contain 
+---
 
-# Aragorn à Bree
+# Aragorn
 
 ## Le consultant externe
 
@@ -231,9 +256,8 @@ Qui a déjà été appelé à 3h du mat pour un incident dont le runbook date de
 
 <v-clicks>
 
-- Il a l'air louche
 - Personne ne sait d'où il vient
-- Il a vu des choses
+- Il a vu des choses dans d'autres entreprises
 - Il coûte cher
 
 </v-clicks>
@@ -259,27 +283,33 @@ Il a une aura de mystère. Il a travaillé "chez des clients qu'il ne peut pas n
 
 # Les conseils d'Aragorn
 
-```
-// Code review du consultant
+## Code review du consultant
 
-// AVANT (code des hobbits)
+````md magic-move
+
+```csharp [hobbit.cs]
+
 public void runAway() {
     if (nazgulDetected) {
         panic();
-        runRandomDirection();
+        runRandomDirection(); // Trouille de hobbit
     }
 }
 
-// APRÈS (code d'Aragorn)
+```
+
+```csharp [hobbit.cs]
+
 public void tacticalRetreat() {
     if (threatDetected) {
         assessThreat();
         chooseSafeRoute();
-        maintainFormation();
-        // 15 ans d'XP en Terre du Milieu
+        maintainFormation(); // 15 ans d'XP en Terre du Milieu
     }
 }
+
 ```
+````
 
 <!--
 Le consultant refactore. C'est plus propre. Personne ne comprend pourquoi.
@@ -296,6 +326,10 @@ layout: intro
 *Ou comment 4 heures de réunion n'aboutissent à rien*
 
 ---
+layout: image-right
+image: /images/Fondcombe.webp
+backgroundSize: contain
+---
 
 # Fondcombe
 
@@ -305,10 +339,9 @@ layout: intro
 
 <v-clicks>
 
+- C'est stable
 - C'est beau
-- C'est calme
 - Ça fait 6000 ans que ça tourne
-- Il y a de la documentation
 
 </v-clicks>
 
@@ -325,6 +358,10 @@ Fondcombe c'est le système legacy qui marche. Celui que tout le monde cite en e
 "Regarde, EDF a un COBOL de 40 ans qui marche très bien."
 -->
 
+---
+layout: image-right
+image: /images/Elrond.jpg
+backgroundSize: contain
 ---
 
 # Elrond
@@ -353,6 +390,8 @@ Le Staff Engineer qui a tout vu. Il te regarde avec ce regard qui dit "j'ai déj
 -->
 
 ---
+layout: two-cols-header
+---
 
 # Le Conseil d'Elrond
 
@@ -360,12 +399,30 @@ Le Staff Engineer qui a tout vu. Il te regarde avec ce regard qui dit "j'ai déj
 
 <!-- Image suggestion : Le Conseil d'Elrond -->
 
+<v-click>
+
+**Elrond ouvre le Conseil :**
+
+*"Nous sommes réunis ici pour une raison. Sauron a forgé l'Anneau Unique.
+Sa complexité corrompt nos systèmes. Il devient plus puissant chaque jour.
+Nous devons décider : que faire de l'Anneau ?"*
+
+</v-click>
+
+::left:: 
+
 **Participants :**
-- Elfes (équipe Platform)
+<v-clicks>
+
+- Un magicien (l'engineering manager)
+- Elfes (équipe frontend)
 - Nains (équipe Backend)  
 - Hommes (équipe Produit)
-- Hobbits (la feature team)
-- Un magicien (le CTO)
+- Hobbits (l'équipe ops)
+
+</v-clicks>
+
+::right::
 
 <v-click>
 
@@ -385,17 +442,17 @@ La réunion d'architecture classique. Tout le monde a son avis. Personne n'est d
 
 ## Les échanges
 
-<v-clicks>
+<v-clicks>  
 
 **Gimli** : *"On n'a qu'à réécrire from scratch !"* 💥
 
 **Legolas** : *"Les nains ne comprennent rien à l'architecture clean !"* 🏹
 
-**Boromir** : *"Et si on utilisait l'Anneau en prod ?"* 
+**Boromir** : *"Utilisons l'Anneau contre Sauron ! Servons-nous de la complexité !"*
 
-**Elrond** : *"On ne peut pas simplement utiliser l'Anneau en prod."*
+**Elrond** : *"L'Anneau ne peut servir qu'un seul maître. Il retournera à Sauron."*
 
-**Gandalf** : *"Il doit être détruit."*
+**Gandalf** : *"Il n'y a qu'un choix. L'Anneau doit être détruit dans le Mordor."*
 
 **Frodon** : *"...je peux prendre le ticket."*
 
@@ -407,29 +464,35 @@ Et c'est le junior qui se retrouve avec le ticket.
 -->
 
 ---
+zoom: 0.9
+---
 
 # La décision architecturale
 
 ```markdown
-# ADR-001: Destruction de l'Anneau Unique
+# ADR-001: Destruction de l'Anneau de Sauron
 
 ## Statut
 Accepté (après 4h de débat)
 
 ## Contexte
-L'Anneau crée un couplage fort avec Sauron.
+Sauron a créé l'Anneau pour imposer un couplage fort sur tous les systèmes.
+Sa complexité grandit. Nos incidents de production augmentent.
+Sauron doit être vaincu.
 
 ## Décision
-Détruire l'Anneau dans les feux de la Montagne du Destin.
+Détruire l'Anneau dans les feux de la Montagne du Destin (production).
+Mission confiée à une petite équipe (Frodon + support).
 
 ## Conséquences
 - Sauron sera définitivement découplé
 - Risque : personne n'est jamais revenu du Mordor
 - Budget : 9 personnes, durée indéterminée
+- **Success metric**: Destruction de OneRing.java en prod
 
 ## Alternatives rejetées
-- "Utiliser l'Anneau contre Sauron" (Boromir) → Rejeté
-- "Le cacher sous un lit" (hobbits) → Rejeté
+- "Utiliser l'Anneau contre Sauron" (Boromir) → L'Anneau sert toujours Sauron
+- "Le cacher" (hobbits) → Sauron le trouvera toujours
 - "Réécrire Sauron" (Gimli) → Hors scope
 ```
 
@@ -437,6 +500,8 @@ Détruire l'Anneau dans les feux de la Montagne du Destin.
 L'ADR (Architecture Decision Record) du Conseil d'Elrond.
 -->
 
+---
+zoom: 0.9
 ---
 
 # La Communauté de l'Anneau
@@ -447,12 +512,12 @@ L'ADR (Architecture Decision Record) du Conseil d'Elrond.
 
 | Membre | Rôle | Spécialité |
 |--------|------|------------|
-| Gandalf | Tech Lead / Manager | A la vision globale |
+| Gandalf | Engineering Manager | A la vision globale |
 | Aragorn | Senior Dev / Consultant | Sait tout faire |
 | Legolas | Dev Frontend | Voit loin, tire vite |
-| Gimli | Dev Backend | Robuste, bourrin |
+| Gimli | Dev Backend | Robuste |
 | Boromir | Product Owner | Veut des résultats |
-| Frodon | Dev Junior | Porte le ticket |
+| Frodon | Ops Junior | Porte le ticket |
 | Sam | QA / Support | Loyal, indispensable |
 | Merry & Pippin | Stagiaires | Là par accident |
 
@@ -571,6 +636,16 @@ Il y a longtemps. Très longtemps.
 
 <!-- Image suggestion : Les portes de la Moria -->
 
+<v-click>
+
+*"Il y a un autre chemin..."*
+
+**Gandalf** : *"La Moria. Un framework créé par les Nains il y a longtemps."*
+
+**Mais la complexité de Sauron l'a corrompu.**
+
+</v-click>
+
 <v-clicks>
 
 - Autrefois la fierté de l'entreprise
@@ -590,7 +665,8 @@ Il y a longtemps. Très longtemps.
 <!--
 Le framework maison. Celui qu'on a développé "parce que Spring c'était trop lourd".
 Celui dont tout le monde était fier.
-Celui que plus personne ne maintient.
+Mais il a adopté les patterns de l'Anneau - le couplage centralisé de Sauron.
+Maintenant, c'est un piège. Celui que plus personne ne maintient.
 -->
 
 ---
@@ -820,34 +896,46 @@ Mais quelqu'un doit rester pour gérer le Balrog.
 -->
 
 ---
+layout: image-right
+image: /images/balrog-fire.jpg
+---
 
 # Le Balrog
 
-## La dette technique existentielle
-
-<!-- Image suggestion : Le Balrog -->
+## La Corruption de Sauron Incarnée
 
 <v-clicks>
 
 - Il était là depuis le début
 - Les fondateurs savaient
 - Ils ont préféré ne pas y toucher
-- *"Ils ont creusé trop profondément"*
+- *"Ils ont creusé trop profondément... et ont adopté les patterns de l'Anneau."*
 
 </v-clicks>
 
 <v-click>
 
-Le Balrog, ce n'est pas un bug.
+**Ce n'est pas juste une dette technique.**
 
-C'est une **décision architecturale de 2008** qui pourrit tout.
+C'est la philosophie de Sauron, gravée dans les fondations du framework.
+
+</v-click>
+
+<v-click>
+
+**Le Balrog = CVE 10/10**
+
+Une faille de sécurité impossible à patcher.
+
+*"You shall not pass... this code review."*
 
 </v-click>
 
 <!--
-Le Balrog, c'est la dette fondamentale.
-Pas un bug qu'on peut fixer. Une décision de design prise il y a 15 ans.
-Over-engineering. Trop d'abstraction. Trop de magie.
+Le Balrog, c'est la corruption de Sauron manifestée dans le code.
+Pas un bug qu'on peut fixer. Une décision architecturale prise il y a 15 ans.
+Elle a adopté la philosophie de l'Anneau : couplage centralisé, dépendances circulaires.
+C'est Sauron qui a gagné cette bataille-là, en 2008.
 -->
 
 ---
@@ -1072,30 +1160,59 @@ C'est le passage du monolithe aux services indépendants.
 
 ## Les bounded contexts
 
+La Communauté se sépare pour combattre Sauron sur plusieurs fronts :
+
 ```
-Communauté (Monolithe)
-    │
-    ├── Service "Mordor" ──────────► Frodon + Sam
-    │   Responsabilité: Destruction de l'Anneau
-    │
-    ├── Service "Rohan" ──────────► Aragorn + Legolas + Gimli  
-    │   Responsabilité: Défense des royaumes
-    │
-    └── Service "Isengard" ────────► Merry + Pippin (+ Ents)
-        Responsabilité: Neutralisation de Saroumane
+├── Service "Mordor" ──────────► Frodon + Sam
+│   Mission: Détruire l'Anneau de Sauron en production
+│
+├── Service "Rohan" ──────────► Aragorn + Legolas + Gimli
+│   Mission: Défendre contre les forces de Sauron
+│
+└── Service "Isengard" ────────► Merry + Pippin
+    Mission: Révéler la trahison interne
 ```
 
 <v-click>
 
-Chaque service est autonome. 
-
-Ils ne dépendent plus les uns des autres pour avancer.
+**Chaque équipe est autonome. Toutes combattent Sauron.**
 
 </v-click>
 
 <!--
 DDD et bounded contexts.
 Chaque équipe a son domaine. Son backlog. Sa responsabilité.
+Mais toutes combattent le même ennemi : Sauron (la complexité).
+-->
+
+---
+layout: image-right
+image: /images/mount-doom-distant.jpg
+---
+
+# Frodon et Sam : Le Voyage Commence
+
+## Direction : Mordor
+
+<v-clicks>
+
+- La plus petite équipe
+- La mission la plus dangereuse
+- Détruire l'Anneau dans le Mordor (production)
+- **Le voyage ne fait que commencer**
+
+</v-clicks>
+
+<v-click>
+
+*"Sauron nous attend. Mais nous devons y aller."*
+
+</v-click>
+
+<!--
+C'est ici que Fellowship se termine.
+La quête vers Mordor est lancée, mais pas terminée.
+L'équipe la plus petite va affronter la complexité de Sauron directement.
 -->
 
 ---
@@ -1253,40 +1370,43 @@ Les deux leçons à retenir.
 -->
 
 ---
+layout: end
+---
 
-# Merci !
+# La Route Continue
 
-## Questions ?
-
-<v-clicks>
-
-*"La route se poursuit sans fin..."*
-
-*"...jusqu'au prochain sprint."*
-
-</v-clicks>
-
-<!-- Image suggestion : La Communauté qui part vers l'horizon -->
+*"La route se poursuit sans fin,*
+*Loin du seuil d'où elle est partie..."*
 
 <v-click>
 
-<br>
+## Où nous en sommes :
 
-**Crédits:**
-- J.R.R. Tolkien pour l'univers
-- Peter Jackson pour les images
-- Votre dette technique pour l'inspiration
+- ✅ Nous avons identifié l'ennemi : **Sauron (la complexité)**
+- ✅ Nous avons pris la décision : **Détruire l'Anneau**
+- ✅ L'équipe est en route vers le **Mordor**
+
+</v-click>
+
+<v-click>
+
+## Ce qui reste à faire :
+
+- ⏳ Traverser le Mordor (refactoring en production)
+- ⏳ Détruire l'Anneau (supprimer OneRing.java)
+- ⏳ Vaincre Sauron (éliminer la complexité fondamentale)
+
+</v-click>
+
+<v-click>
+
+**La bataille ne fait que commencer.**
+
+*Suite au prochain épisode...*
 
 </v-click>
 
 <!--
-Questions ?
+La présentation respecte la limite de Fellowship of the Ring.
+La victoire n'est pas encore là. Juste l'espoir et le courage d'avancer.
 -->
-
----
-layout: end
----
-
-# The End
-
-*"I will not say: do not deploy on Friday, for not all Fridays are meant to go wrong."*
