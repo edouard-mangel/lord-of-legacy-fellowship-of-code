@@ -127,62 +127,44 @@ Frodon : *"Gandalf, c'est quoi ce OneRing.java ?"*
 Qui a déjà hérité d'un projet avec un fichier "NE PAS TOUCHER" ?
 -->
 
+
+---
+layout: image-right
+image: /images/Gandalf_the_Grey.webp
 ---
 
-# L'Anneau Unique
+# Gandalf le gris
 
-## Le couplage absolu
-
-<!-- Image suggestion : L'Anneau avec ses inscriptions -->
+## Engineering manager et mentor de Bilbo
 
 <v-clicks>
 
-- **Un code pour les gouverner tous** → Singleton omniscient
-- **Un code pour les trouver** → Dépendance globale
-- **Un code pour les amener tous** → Tout passe par lui
-- **Et dans les ténèbres les lier** → Impossible à retirer
+- Contributeur Unix, 
+- Dernier dev de l'entreprise présent à sa création
+- A mené de nombreuses batailles, 
+- Tech lead originel du framework maison
 
 </v-clicks>
 
 <!--
-L'Anneau, c'est une dépendance centrale dont tout le système dépend.
-Single point of failure ultime.
-Quand Sauron perd l'Anneau, son armée s'effondre.
--->
 
+-->
 
 ---
+layout: image-left
+image: /images/Gandalf_the_Grey.webp
+---
 
-# Gandalf vient chercher Frodon
+# Gandalf le gris
 
-## "Gardez-le secret. Gardez-le sûr."
+## "Ne touche pas à ça Bilbo"
 
-<!-- Image suggestion : Gandalf qui parle à Frodon -->
-
-<v-click>
-
-Traduction en code review :
-
-</v-click>
-
-<v-clicks>
-
-- *"Ne commitez pas ça sur main"*
-- *"Mettez ça derrière une feature flag"*
-- *"Surtout, n'en parlez pas au Product Owner"*
-
-</v-clicks>
-
-<v-click>
-
-La dette technique, c'est comme l'Anneau : on pense pouvoir la cacher.
-
-</v-click>
 
 <!--
-La stratégie de Gandalf : on cache le problème et on espère que ça passe.
-Spoiler : ça ne marche jamais.
+
 -->
+
+
 
 ---
 
