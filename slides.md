@@ -1,6 +1,6 @@
 ---
 # try also 'default' to start simple
-theme: bricks
+theme: nord
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 # some information about your slides (markdown enabled)
@@ -36,6 +36,17 @@ Lever la main si vous avez déjà entendu "c'était mieux avant, quand Jean-Mich
 -->
 
 ---
+layout: intro
+image: /images/Frodo_Baggins-house.jpg
+---
+
+# Introduction
+
+## Présentation de LegacyCorp
+
+*Ou comment un projet greenfield devient un cauchemar legacy*
+
+---
 layout: image-right
 image: /images/Frodo_Baggins-house.jpg
 ---
@@ -57,16 +68,12 @@ image: /images/green_hills.jpg
 
 <!-- Image suggestion : La Comté, verte et paisible -->
 
-<v-clicks>
-
 - Pas d'historique
 - Pas de dette technique
 - Pas de "on a toujours fait comme ça"
+<v-click>
 - Les hobbits n'ont jamais vu un NullPointerException
 
-</v-clicks>
-
-<v-click>
 
 *"Les hobbits n'ont que faire du monde extérieur..."*
 
@@ -86,13 +93,13 @@ image: images/bilbo_baggins.jpg
 
 ## Le départ du dev senior
 
-<v-clicks>
+<v-click>
 
 - Il a tout construit, il connaît tous les secrets.
 - Il part pour "faire un métier qui a du sens"
 - Il laisse ses affaires à son mentoré, Frodon
 
-</v-clicks>
+</v-click>
 
 
 <!--
@@ -101,6 +108,8 @@ Il laisse "tout ce qu'il possède" à Frodon.
 Spoiler : c'est pas que des cadeaux.
 -->
 
+---
+zoom: 1.5
 ---
 
 # L'héritage de Bilbo
@@ -131,27 +140,22 @@ Qui a déjà hérité d'un projet avec un fichier "NE PAS TOUCHER" ?
 ---
 layout: image-right
 image: /images/Gandalf_the_Grey.webp
+zoom: 0.9
 ---
 
 # Gandalf le gris
 
-<v-click>
-
 ## Engineering manager et mentor de Bilbo
-</v-click>
 
-
-<v-clicks>
 
 - Contributeur Unix
 - Dernier dev de l'entreprise présent à sa création
 - A mené de nombreuses batailles contre la complexité
 - Tech lead originel du framework maison
+<v-click>
+
 - **Il sait que Sauron a forgé l'Anneau**
 
-</v-clicks>
-
-<v-click>
 
 *"Sauron a créé cet Anneau. Sa complexité grandit chaque jour. Il doit être détruit."*
 
@@ -161,28 +165,6 @@ image: /images/Gandalf_the_Grey.webp
 Gandalf connaît le vrai ennemi : Sauron, l'architecte de la complexité.
 Il a vu comment l'Anneau corrompt les systèmes.
 -->
-
----
-layout: image-left
-image: /images/Gandalf_the_Grey.webp
----
-
-# Gandalf le gris
-
-## "Ne touche pas à ça Frodon"
-
-<v-click>
-
-Nous verrons plus tard. 
-
-Il y a beaucoup de choses à faire avant de pouvoir s'en préoccuper. 
-
-</v-click>
-
-<!--
-
--->
-
 
 
 ---
@@ -198,13 +180,14 @@ image: /images/Frodo-and-Sam-prod-incident.jpg
 
 **Les Nazgûl sont les agents de Sauron.**
 
+
+- Ils arrivent toujours les vendredi
+- Ils ne meurent jamais vraiment
+
 <v-clicks>
 
-- Ils arrivent toujours la nuit
-- Ils arrivent toujours le vendredi
-- Ils ne meurent jamais vraiment
 - Ils sentent la peur (et les déploiements)
-- **Ils chassent ceux qui touchent à l'Anneau**
+- **Ils sont attirés par ceux qui touchent à l'Anneau**
 
 </v-clicks>
 
@@ -213,33 +196,6 @@ Les Nazgûl sont les serviteurs de Sauron.
 Ils chassent quiconque essaie de modifier l'Anneau (refactorer le couplage).
 Les incidents de production sont la façon dont Sauron défend son architecture.
 Tu crois les avoir vaincus, ils reviennent - car Sauron les rappelle toujours.
--->
-
----
-
-# La fuite vers Bree
-
-## L'incident de production
-
-```
-🔴 CRITICAL ALERT - 03:47 AM
-Service: hobbit-journey-service
-Status: NAZGUL_DETECTED
-Message: "They are coming"
-
-Runbook: https://wiki.gondor.internal/runbooks/nazgul
-Last updated: Third Age 2941
-Author: gandalf@istari.me (account disabled)
-```
-
-<v-click>
-
-Le runbook renvoie vers un Confluence qui n'existe plus.
-
-</v-click>
-
-<!--
-Qui a déjà été appelé à 3h du mat pour un incident dont le runbook date de 5 ans ?
 -->
 
 ---
@@ -252,23 +208,14 @@ backgroundSize: contain
 
 ## Le consultant externe
 
-<!-- Image suggestion : Aragorn dans l'ombre au Poney Fringant -->
-
-<v-clicks>
 
 - Personne ne sait d'où il vient
 - Il a vu des choses dans d'autres entreprises
 - Il coûte cher
 
-</v-clicks>
-
 <v-click>
 
 *"Vous pouvez m'appeler Grands-Pas."*
-
-</v-click>
-
-<v-click>
 
 *"Mon TJM est de 1200€."*
 
@@ -277,42 +224,6 @@ backgroundSize: contain
 <!--
 Le consultant qui débarque sur ton projet legacy.
 Il a une aura de mystère. Il a travaillé "chez des clients qu'il ne peut pas nommer".
--->
-
----
-
-# Les conseils d'Aragorn
-
-## Code review du consultant
-
-````md magic-move
-
-```csharp [hobbit.cs]
-
-public void runAway() {
-    if (nazgulDetected) {
-        panic();
-        runRandomDirection(); // Trouille de hobbit
-    }
-}
-
-```
-
-```csharp [hobbit.cs]
-
-public void tacticalRetreat() {
-    if (threatDetected) {
-        assessThreat();
-        chooseSafeRoute();
-        maintainFormation(); // 15 ans d'XP en Terre du Milieu
-    }
-}
-
-```
-````
-
-<!--
-Le consultant refactore. C'est plus propre. Personne ne comprend pourquoi.
 -->
 
 ---
@@ -337,13 +248,9 @@ backgroundSize: contain
 
 <!-- Image suggestion : Fondcombe, majestueuse -->
 
-<v-clicks>
-
 - C'est stable
 - C'est beau
 - Ça fait 6000 ans que ça tourne
-
-</v-clicks>
 
 <v-click>
 
@@ -368,18 +275,13 @@ backgroundSize: contain
 
 ## Le Staff Engineer
 
-<!-- Image suggestion : Elrond, regard sévère -->
-
-<v-clicks>
-
 - Il était là quand le système a été conçu
 - Il a vu des architectures naître et mourir
-- Il a survécu à la migration Oracle → PostgreSQL de l'an 3000
-- Il a des opinions sur les microservices
-
-</v-clicks>
+- Il a survécu à la migration Oracle → PostgreSQL de 2014
 
 <v-click>
+
+- Il a des opinions sur les microservices
 
 *"J'étais là, Gandalf. J'étais là il y a 3000 ans, quand Isildur a refusé de merger la PR."*
 
@@ -397,8 +299,6 @@ layout: two-cols-header
 
 ## La grande réunion d'architecture
 
-<!-- Image suggestion : Le Conseil d'Elrond -->
-
 <v-click>
 
 **Elrond ouvre le Conseil :**
@@ -411,13 +311,17 @@ Nous devons décider : que faire de l'Anneau ?"*
 
 ::left:: 
 
+<v-click>
+
 **Participants :**
+
+</v-click>
 <v-clicks>
 
 - Un magicien (l'engineering manager)
-- Elfes (équipe frontend)
-- Nains (équipe Backend)  
-- Hommes (équipe Produit)
+- Legolas (dev frontend)
+- Gimli (dev Backend)  
+- Boromir (Product Owner)
 - Hobbits (l'équipe ops)
 
 </v-clicks>
@@ -526,57 +430,31 @@ Une équipe bien équilibrée. Sur le papier.
 -->
 
 ---
-
-# Les principes de la Communauté
-
-## Le couplage faible bien pensé
-
-<v-clicks>
-
-- **Objectif commun** : Détruire l'Anneau (la vision produit)
-- **Interfaces claires** : Chacun sait ce qu'on attend de lui
-- **Autonomie** : Gandalf n'a pas besoin de savoir comment Legolas code
-- **Résilience** : Si un membre tombe, les autres continuent
-
-</v-clicks>
-
-<v-click>
-
-*"Même la plus petite équipe peut changer le cours de l'avenir."*
-
-</v-click>
-
-<!--
-La Communauté est un exemple de couplage faible.
-Ils collaborent via un contrat (l'objectif), pas via une connaissance intime du code de chacun.
--->
-
----
 layout: intro
 ---
 
 # Acte III
 
-## Le Framework Maison
+## Le "sprint zéro"
 
-*Ou l'histoire de la Moria*
+*Choix de la stratégie, et des technos*
 
 ---
 
 # Caradhras
 
-## La solution propre qui échoue
+## La tentative de refonte
 
 <!-- Image suggestion : La Communauté dans la tempête -->
 
-<v-clicks>
+<v-click>
 
 - Le chemin "évident"
 - La solution "by the book"
 - Architecture clean, patterns respectés
-- Météo : -40°C, blizzard
+- TDD, DDD, BDD
 
-</v-clicks>
+</v-click>
 
 <v-click>
 
@@ -593,17 +471,13 @@ Mais ça prend trop de temps. Le business n'attend pas.
 
 ---
 
-# Le choix
+# Plus le choix 
 
-## Gandalf propose la Moria
+## D'une refonte globale à un refactoring progressif
 
 <!-- Image suggestion : Gandalf inquiet -->
 
-<v-click>
-
 *"Il y a un autre chemin..."*
-
-</v-click>
 
 <v-click>
 
@@ -630,37 +504,27 @@ Il y a longtemps. Très longtemps.
 
 ---
 
+<!-- layout: image-right --> 
+
 # La Moria
 
-## Le Framework Maison™
+## Le Framework Maison™ 
+
+<br/>
+<br/>
+
+## Autrefois la fierté de l'entreprise
 
 <!-- Image suggestion : Les portes de la Moria -->
 
-<v-click>
-
-*"Il y a un autre chemin..."*
-
-**Gandalf** : *"La Moria. Un framework créé par les Nains il y a longtemps."*
-
-**Mais la complexité de Sauron l'a corrompu.**
-
-</v-click>
-
 <v-clicks>
 
-- Autrefois la fierté de l'entreprise
-- "On avait notre propre ORM"
-- "On avait notre propre DI"
+- "On avait notre propre Query Builder"
+- "On avait notre propre injection de dépendances"
 - "On avait notre propre moteur de templates"
-- "C'était magnifique"
+- "... C'était magnifique"
 
 </v-clicks>
-
-<v-click>
-
-*"Jadis, ces portes étaient gardées par des développeurs seniors..."*
-
-</v-click>
 
 <!--
 Le framework maison. Celui qu'on a développé "parce que Spring c'était trop lourd".
@@ -671,71 +535,13 @@ Maintenant, c'est un piège. Celui que plus personne ne maintient.
 
 ---
 
-# Les portes de la Moria
-
-## "Speak, friend, and enter"
-
-<!-- Image suggestion : L'énigme de la porte -->
-
-```bash
-$ git clone git@gitlab.internal:platform/moria-framework.git
-Cloning into 'moria-framework'...
-Enter passphrase for key '/home/dev/.ssh/id_rsa': 
-Permission denied (publickey).
-
-$ cat README.md
-# Moria Framework
-
-Pour accéder au repo, contacter @balin
-Last active: 2847 days ago
-```
-
-<v-click>
-
-Le mot de passe ? **Mellon**. 
-
-Mais le compte GitLab a été désactivé.
-
-</v-click>
-
-<!--
-L'authentification au repo. Les credentials que personne n'a.
-Le compte SSH de l'ancien tech lead qui a été désactivé.
--->
-
----
-
 # L'entrée dans la Moria
 
 ## Les premiers pas
 
 <!-- Image suggestion : L'intérieur sombre de la Moria -->
 
-<v-clicks>
-
-- L'IDE met 5 minutes à indexer
-- Les imports sont en rouge mais ça compile
-- Il y a 3 versions de `StringUtils`
-- Le `pom.xml` fait 2000 lignes
-
-</v-clicks>
-
-<v-click>
-
-*"Bientôt, vous allez découvrir l'hospitalité des devs. Du code legacy, une bonne heure de debug !"*
-
-</v-click>
-
-<!--
-Tu ouvres le projet. Tout est rouge dans l'IDE. Mais ça compile.
-Personne ne sait pourquoi.
--->
-
----
-
-# Le silence inquiétant
-
-## Les premiers tests passent
+Les premiers tests passent
 
 ```bash
 $ mvn test
@@ -773,10 +579,6 @@ Fausse confiance.
 
 *"Ici repose Balin, Seigneur de la Moria"*
 
-</v-click>
-
-<v-click>
-
 ```markdown
 ## Post-Mortem: Tentative de refacto du Framework
 
@@ -799,37 +601,6 @@ On n'en a plus jamais entendu parler.
 
 ---
 
-# Le journal de Mazarbul
-
-## Le changelog abandonné
-
-```
-## v2.0.0-alpha (jamais released)
-
-### 2019-03-15 - @balin
-Début du refacto. Tout va bien.
-
-### 2019-04-22 - @balin  
-Les tests cassent. On investigue.
-
-### 2019-05-30 - @balin
-Trouvé une dépendance circulaire. C'est profond.
-
-### 2019-06-14 - @balin
-Ils ont réveillé quelque chose. Dans les classes abstraites.
-
-### 2019-06-15 - @balin
-Nous ne pouvons plus sortir.
-Les bugs arrivent.
-```
-
-<!--
-Le changelog d'un refacto abandonné.
-On sent la descente aux enfers.
--->
-
----
-
 # Les gobelins
 
 ## Les bugs en cascade
@@ -846,53 +617,10 @@ On sent la descente aux enfers.
 
 </v-clicks>
 
-<v-click>
-
-```java
-// TODO: fix this - @goblin1 (2016)
-// FIXME: broke something - @goblin2 (2017)  
-// HACK: temporary workaround - @goblin3 (2018)
-// XXX: don't touch - @goblin4 (2019)
-```
-
-</v-click>
-
 <!--
 Les bugs dans un framework legacy.
 Tu touches une ligne, trois régressions.
 Ils sont partout, dans tous les recoins.
--->
-
----
-
-# La fuite
-
-## Le debug en urgence
-
-```java
-// Gandalf débugue en live
-public void crossBridgeOfKhazadDum() {
-    try {
-        this.crossBridge();
-    } catch (BalrogException e) {
-        System.out.println("YOU SHALL NOT PASS!");
-        throw new RuntimeException("Fly, you fools!", e);
-    } finally {
-        // TODO: handle this better
-        this.fallIntoAbyss();
-    }
-}
-```
-
-<v-click>
-
-Le try-catch qui sauve l'équipe mais sacrifie le tech lead.
-
-</v-click>
-
-<!--
-Le hotfix en prod qui sauve le sprint.
-Mais quelqu'un doit rester pour gérer le Balrog.
 -->
 
 ---
@@ -902,7 +630,7 @@ image: /images/balrog-fire.jpg
 
 # Le Balrog
 
-## La Corruption de Sauron Incarnée
+## La faille de sécurité CVE 10
 
 <v-clicks>
 
@@ -976,26 +704,6 @@ L'équipe doit continuer sans lui.
 
 # "Fly, you fools!"
 
-## Le dernier message Slack
-
-```
-#moria-framework - il y a 6 mois
-
-@gandalf: Je vais réécrire le core. Ne m'attendez pas.
-@gandalf: Continuez sur les features.
-@gandalf: Je vous retrouve de l'autre côté.
-@gandalf: Ah et...
-@gandalf: Ne touchez PAS au package com.moria.core.abyss
-@gandalf: Fuyez, pauvres fous.
-@gandalf is now offline
-
-Cette personne n'est plus dans le workspace
-```
-
-<!--
-Le dernier message du tech lead avant de partir en mission impossible.
--->
-
 ---
 layout: intro
 ---
@@ -1039,43 +747,22 @@ Sprint de stab. Documentation. Tests. Rétrospective.
 
 # Galadriel
 
+Senior Quality Engineer 
+
 ## La QA qui voit tout
 
 <!-- Image suggestion : Galadriel et son miroir -->
 
-*"Je sais ce que tu as vu. Car c'est aussi dans mon miroir."*
-
-<v-clicks>
-
-- Elle voit le passé (les régressions)
-- Elle voit le présent (les bugs en prod)
-- Elle voit le futur (ce qui va casser si tu merges)
-
-</v-clicks>
+*"Je sais ce que tu as vu. Car c'est aussi dans mon miroir."* 
 
 <v-click>
 
-Le miroir de Galadriel = La CI/CD pipeline
+Le miroir de Galadriel = La pipeline CI/CD. 
 
 </v-click>
 
-<!--
-Galadriel c'est la QA senior. Celle qui voit les problèmes avant tout le monde.
-Son miroir, c'est la CI qui te montre ce qui va casser.
--->
-
----
-
-# Le miroir de Galadriel
-
-## La CI pipeline
-
 ```yaml
 # .gitlab-ci.yml de Lothlórien
-
-stages:
-  - mirror_of_truth
-
 tests:
   stage: mirror_of_truth
   script:
@@ -1092,17 +779,6 @@ tests:
 ```
 
 <!--
-La CI qui empêche les catastrophes.
-Elle te montre l'avenir, même si tu n'aimes pas ce que tu vois.
--->
-
----
-
-# Les cadeaux de Galadriel
-
-## Les outils pour la suite
-
-<v-clicks>
 
 | Cadeau | Équivalent technique |
 |--------|---------------------|
@@ -1111,37 +787,20 @@ Elle te montre l'avenir, même si tu n'aimes pas ce que tu vois.
 | **Ceinture dorée** (Sam) | Le monitoring |
 | **Poignards elfiques** (Merry & Pippin) | Les feature flags |
 
-</v-clicks>
-
-<v-click>
-
-*"Puisse cette lumière vous éclairer quand toutes les autres s'éteindront."*
-
-→ *"Puissent ces logs vous aider quand la prod sera down à 3h du mat."*
-
-</v-click>
-
-<!--
 Galadriel équipe l'équipe pour la suite.
 Elle leur donne ce qu'il faut pour survivre.
 -->
 
 ---
+layout: image-right
+--- 
 
-# Amon Hen
+# Le backlog repriorisé
 
-## La séparation des responsabilités
-
-<!-- Image suggestion : Boromir qui tente de prendre l'Anneau -->
-
-<v-clicks>
+## Ca suffit maintenant ! Les clients attendent
 
 - Boromir craque : il veut utiliser la dette pour livrer plus vite
-- La Communauté se divise
-- Chaque équipe part avec sa responsabilité
-- C'est le découplage final
 
-</v-clicks>
 
 <v-click>
 
@@ -1154,36 +813,6 @@ La Communauté se sépare. Chaque sous-équipe a maintenant sa mission.
 C'est le passage du monolithe aux services indépendants.
 -->
 
----
-
-# Le découplage de la Communauté
-
-## Les bounded contexts
-
-La Communauté se sépare pour combattre Sauron sur plusieurs fronts :
-
-```
-├── Service "Mordor" ──────────► Frodon + Sam
-│   Mission: Détruire l'Anneau de Sauron en production
-│
-├── Service "Rohan" ──────────► Aragorn + Legolas + Gimli
-│   Mission: Défendre contre les forces de Sauron
-│
-└── Service "Isengard" ────────► Merry + Pippin
-    Mission: Révéler la trahison interne
-```
-
-<v-click>
-
-**Chaque équipe est autonome. Toutes combattent Sauron.**
-
-</v-click>
-
-<!--
-DDD et bounded contexts.
-Chaque équipe a son domaine. Son backlog. Sa responsabilité.
-Mais toutes combattent le même ennemi : Sauron (la complexité).
--->
 
 ---
 layout: image-right
@@ -1243,36 +872,6 @@ Boromir meurt parce qu'il a voulu aller trop vite.
 Le PO qui ignore les warnings.
 -->
 
----
-
-# La leçon de Boromir
-
-## Post-mortem
-
-```markdown
-## Incident: Chute de Boromir
-
-**Impact:** Perte d'un membre senior de l'équipe
-
-**Root cause:** 
-- Pression business excessive
-- Tentation d'utiliser des raccourcis
-- Ignorance des warnings de l'équipe QA
-
-**Actions:**
-- [ ] Écouter la QA
-- [ ] Ne pas utiliser la dette comme feature
-- [ ] Respecter le Definition of Done
-
-**Citation notable:**
-"I would have followed you, my brother. My captain. My king."
-(Message Slack de @aragorn après l'incident)
-```
-
-<!--
-Le post-mortem de la mort de Boromir.
-Ce qui arrive quand on ignore les avertissements.
--->
 
 ---
 layout: intro
@@ -1281,12 +880,6 @@ layout: intro
 # Épilogue
 
 ## Les leçons de la Terre du Milieu
-
----
-
-# Ce que nous avons appris
-
-## Récapitulatif
 
 <v-clicks>
 
@@ -1331,7 +924,7 @@ Il a vu des choses. Il a changé.
 
 <v-click>
 
-*"J'ai combattu le Balrog. J'ai réécrit le core. Je suis passé à Kotlin."*
+*"J'ai combattu le Balrog. J'ai réécrit le core en Kotlin."*
 
 </v-click>
 
@@ -1359,54 +952,8 @@ Il est transformé.
 
 <br>
 
-*"Ne touchez pas au package com.moria.core.abyss."*
+*"Ne touchez pas aux frameworks maison, ça ne finit jamais bien."*
 
 — Gandalf (certainement)
 
 </v-click>
-
-<!--
-Les deux leçons à retenir.
--->
-
----
-layout: end
----
-
-# La Route Continue
-
-*"La route se poursuit sans fin,*
-*Loin du seuil d'où elle est partie..."*
-
-<v-click>
-
-## Où nous en sommes :
-
-- ✅ Nous avons identifié l'ennemi : **Sauron (la complexité)**
-- ✅ Nous avons pris la décision : **Détruire l'Anneau**
-- ✅ L'équipe est en route vers le **Mordor**
-
-</v-click>
-
-<v-click>
-
-## Ce qui reste à faire :
-
-- ⏳ Traverser le Mordor (refactoring en production)
-- ⏳ Détruire l'Anneau (supprimer OneRing.java)
-- ⏳ Vaincre Sauron (éliminer la complexité fondamentale)
-
-</v-click>
-
-<v-click>
-
-**La bataille ne fait que commencer.**
-
-*Suite au prochain épisode...*
-
-</v-click>
-
-<!--
-La présentation respecte la limite de Fellowship of the Ring.
-La victoire n'est pas encore là. Juste l'espoir et le courage d'avancer.
--->
