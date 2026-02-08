@@ -44,12 +44,6 @@ image: /images/Frodo_Baggins-house.jpg
 
 ## Présentation de LegacyCorp
 
----
-
-# L'entreprise
-
-## 
-
 
 --- 
 layout: image
@@ -57,13 +51,14 @@ image: images/3_rings.jpeg
 --- 
 
 
-# 3 services pour les ops
+# 
 
 
 <!-- 
-Supabase, 
-AWS Lambda, 
-Azure functions
+3 services pour les ops
+Jenkins, 
+Lambda functions, 
+Kubernetes
 -->
 
 
@@ -73,10 +68,11 @@ image: /images/7_rings.jpeg
 --- 
 
 
-# 7 services pour les développeurs
+# 
 
 <!-- 
-CosmosDb, firebase, 
+7 services pour les développeurs
+Mongo Redis Oracle GraphQL MySql, postgres, DynamoDB
 -->
 
 ---
@@ -85,14 +81,17 @@ image: /images/9_rings.jpg
 backgroundSize: contain
 ---
 
-# 9 services pour les managers
+#
 
 <!--
+
+9 services pour les managers
+
 Jira, 
 Confluence, 
 Teams, 
 Slack, 
-SharePoint,
+SharePoint
 -->
 
 --- 
@@ -101,6 +100,72 @@ image: /images/The_one_ring.png
 backgroundSize: contain
 ---
 
+---
+
+# Un anneau pour les coupler tous 
+
+## Le couplage, qu'est-ce que c'est ? 
+
+<v-clicks>
+
+- Une mesure pour mesurer le volume d'informations échangé par 2 composants. 
+
+- On parle de couplage « fort » ou « serré » entre deux composants s’ils échangent beaucoup de données. 
+
+- Au contraire, on parle de couplage faible s’ils sont indépendants ou s’ils échangent un minimum de données
+
+</v-clicks>
+
+
+---
+
+# LegacyCorp : Un Royaume Enchaîné par son Passé
+Un monolithe si enchevêtré que personne n’ose plus y toucher…
+
+## Problèmes clés
+
+<v-click>
+
+✅ Le Monolithe Maudit 
+
+→ "Modifier une ligne = risque de tout casser."
+</v-click>
+
+
+<v-click>
+
+✅ Les Dépendances Invisibles 🕸️
+
+→ "Un changement dans le module de templates peut casser le module d'envoi de mails… sans que personne ne sache pourquoi."
+
+</v-click>
+
+<v-click>
+
+✅ La Dette Technique ⌛
+
+→ "Chaque nouvelle feature ajoute 10 bugs. Les devs passent 80% de leur temps à corriger."
+
+</v-click>
+
+
+--- 
+layout: image 
+image: images/orcs.jpg
+backgroundSize: 70%
+---
+
+# Les équipes sont esclaves des bugs 
+
+--- 
+layout: statement
+--- 
+
+# La menace grandissante
+
+## La concurrence arrive 
+
+Pendant que les efforts sont concentrés sur la maintenance du legacy, des start-ups travaillent dans l'ombre et menacent le marché de LegacyCorp. 
 
 
 ---
