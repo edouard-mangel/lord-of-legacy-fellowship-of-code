@@ -1,6 +1,6 @@
 ---
 # try also 'default' to start simple
-theme: nord
+theme: seriph
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 # some information about your slides (markdown enabled)
@@ -44,7 +44,64 @@ image: /images/Frodo_Baggins-house.jpg
 
 ## Présentation de LegacyCorp
 
-*Ou comment un projet greenfield devient un cauchemar legacy*
+---
+
+# L'entreprise
+
+## 
+
+
+--- 
+layout: image
+image: images/3_rings.jpeg
+--- 
+
+
+# 3 services pour les ops
+
+
+<!-- 
+Supabase, 
+AWS Lambda, 
+Azure functions
+-->
+
+
+--- 
+layout: image
+image: /images/7_rings.jpeg
+--- 
+
+
+# 7 services pour les développeurs
+
+<!-- 
+CosmosDb, firebase, 
+-->
+
+---
+layout: image
+image: /images/9_rings.jpg
+backgroundSize: contain
+---
+
+# 9 services pour les managers
+
+<!--
+Jira, 
+Confluence, 
+Teams, 
+Slack, 
+SharePoint,
+-->
+
+--- 
+layout: image
+image: /images/The_one_ring.png
+backgroundSize: contain
+---
+
+
 
 ---
 layout: image-right
@@ -71,8 +128,10 @@ image: /images/green_hills.jpg
 - Pas d'historique
 - Pas de dette technique
 - Pas de "on a toujours fait comme ça"
+
 <v-click>
-- Les hobbits n'ont jamais vu un NullPointerException
+
+- Les hobbits n'ont jamais vu un NullPointerException 
 
 
 *"Les hobbits n'ont que faire du monde extérieur..."*
@@ -85,7 +144,7 @@ La Comté c'est le projet qui démarre. Le backlog est vide, le repo est propre,
 -->
 
 --- 
-layout: image-right
+layout: image
 image: images/bilbo_baggins.jpg
 ---
 
@@ -166,12 +225,36 @@ Gandalf connaît le vrai ennemi : Sauron, l'architecte de la complexité.
 Il a vu comment l'Anneau corrompt les systèmes.
 -->
 
+---
+layout: image-right
+image: /images/Aragorn.png
+backgroundSize: contain 
+---
+
+# Aragorn
+
+## Le Scrum Master
+
+- Personne ne sait d'où il vient
+- Il a vu des choses dans d'autres entreprises
+- Il coûte cher
+
+<v-click>
+
+*"Vous pouvez m'appeler Grands-Pas."*
+
+</v-click>
+
+<!--
+Le consultant qui débarque sur ton projet legacy.
+Il a une aura de mystère. Il a travaillé "chez des clients qu'il ne peut pas nommer".
+-->
+
 
 ---
 layout: image-right
 backgroundSize: contain
 image: /images/Frodo-and-Sam-prod-incident.jpg
-
 ---
 
 # Les Cavaliers Noirs
@@ -196,34 +279,6 @@ Les Nazgûl sont les serviteurs de Sauron.
 Ils chassent quiconque essaie de modifier l'Anneau (refactorer le couplage).
 Les incidents de production sont la façon dont Sauron défend son architecture.
 Tu crois les avoir vaincus, ils reviennent - car Sauron les rappelle toujours.
--->
-
----
-layout: image-right
-image: /images/Aragorn.png
-backgroundSize: contain 
----
-
-# Aragorn
-
-## Le consultant externe
-
-
-- Personne ne sait d'où il vient
-- Il a vu des choses dans d'autres entreprises
-- Il coûte cher
-
-<v-click>
-
-*"Vous pouvez m'appeler Grands-Pas."*
-
-*"Mon TJM est de 1200€."*
-
-</v-click>
-
-<!--
-Le consultant qui débarque sur ton projet legacy.
-Il a une aura de mystère. Il a travaillé "chez des clients qu'il ne peut pas nommer".
 -->
 
 ---
@@ -256,7 +311,7 @@ backgroundSize: contain
 
 Fondcombe, c'est le monolithe bien maintenu.
 
-L'exception qui confirme la règle.
+L'exception .
 
 </v-click>
 
@@ -417,7 +472,7 @@ zoom: 0.9
 | Membre | Rôle | Spécialité |
 |--------|------|------------|
 | Gandalf | Engineering Manager | A la vision globale |
-| Aragorn | Senior Dev / Consultant | Sait tout faire |
+| Aragorn | Senior Dev / Scrum master | Sait tout faire |
 | Legolas | Dev Frontend | Voit loin, tire vite |
 | Gimli | Dev Backend | Robuste |
 | Boromir | Product Owner | Veut des résultats |
