@@ -35,7 +35,7 @@ jobs:
         run: pnpm install
 
       - name: Build Slidev
-        run: pnpm build --base /lord-of-dev/
+        run: pnpm build --base /lord-of-legacy-fellowship-of-code/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
