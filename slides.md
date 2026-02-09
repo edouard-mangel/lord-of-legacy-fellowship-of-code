@@ -125,7 +125,7 @@ image: /images/Frodo_Baggins-house.jpg
 
 --- 
 layout: image
-image: images/3_rings.jpeg
+image: /images/3_rings.jpeg
 --- 
 
 
@@ -276,7 +276,7 @@ If it works, don't fix it !
 
 --- 
 layout: image 
-image: images/orcs.jpg
+image: /images/orcs.jpg
 backgroundSize: 70%
 ---
 
@@ -291,7 +291,6 @@ layout: statement
 # La concurrence arrive !
 
 Pendant que les efforts sont concentrés sur la maintenance du legacy, des start-ups travaillent dans l'ombre et menacent le marché de LegacyCorp. 
-
 
 
 ---

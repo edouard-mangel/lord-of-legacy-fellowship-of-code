@@ -1,4 +1,4 @@
----
+
 
 # Acte II
 
@@ -56,7 +56,7 @@ Nous devons décider : que faire de l'Anneau ?"*
 - Aragorn (Scrum Master)
 - Legolas (dev frontend)
 - Gimli (dev Backend)  
-- Hobbits (l'équipe ops)
+- Frodon (Ops Junior)
 
 </v-clicks>
 
@@ -115,13 +115,14 @@ L'ADR (Architecture Decision Record) du Conseil d'Elrond.
 
 ---
 zoom: 0.9
+layout: image
+image: /images/fellowship.jpg
+backgroundSize: 115%
 ---
 
-# La Communauté de l'Anneau
+# La Communauté de l'Anneau : L'équipe cross-fonctionnelle
 
-## L'équipe cross-fonctionnelle
-
-<!-- Image suggestion : La Communauté au complet -->
+<!--
 
 | Membre | Rôle | Spécialité |
 |--------|------|------------|
@@ -132,9 +133,7 @@ zoom: 0.9
 | Boromir | Product Owner | Veut des résultats |
 | Frodon | Ops Junior | Porte le ticket |
 | Sam | QA / Support | Loyal, indispensable |
-| Merry & Pippin | Stagiaires | Là par accident |
-
-<!--
+| Merry & Pippin | Alternants  | Là par accident |
 Une équipe bien équilibrée. Sur le papier.
 -->
 

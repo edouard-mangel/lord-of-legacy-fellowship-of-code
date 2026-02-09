@@ -38,7 +38,7 @@ La Comté c'est le projet qui démarre. Le backlog est vide, le repo est propre,
 
 --- 
 layout: image
-image: images/bilbo_baggins.jpg
+image: /images/bilbo_baggins.jpg
 ---
 
 # Le départ du dev senior
@@ -157,10 +157,3 @@ Supposés cadrer les déploiements et assurer la qualité des livrables,
 Les outils peuvent vite devenir des freins plutôt que des leviers de productivité
 
 -->
-
---- 
-
-# 
-
----
-layout: intro

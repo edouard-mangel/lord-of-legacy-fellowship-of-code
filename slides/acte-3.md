@@ -8,7 +8,7 @@
 
 ---
 layout: image-right
-image: /images/Caradhras.png
+image: /images/Caradhras.jpg
 backgroundSize: 140%
 ---
 
@@ -23,15 +23,17 @@ backgroundSize: 140%
 - Le chemin "évident"
 - La solution "by the book"
 - Architecture clean, patterns respectés
-- TDD, DDD, BDD
+- Test Driven Development, 
+- Domain-Driven Design, 
+- Behavior-Driven Development...
 
 </v-click>
 
 <v-click>
 
-*"On pourrait passer par le nouveau micro-service..."*
+*"On va appliquer toutes les bonnes pratiques, ça ira super vite !"*
 
-*"Ça prendrait 3 sprints de plus."*
+*"En tout cas si j'en crois mon gourou Linkedin c'est dans la poche !"*
 
 </v-click>
 
@@ -51,14 +53,15 @@ zoom: 0.9
 Malgré une architecture clean, des patterns respectés, et une équipe compétente, la refonte échoue.
 
 ## Le TDD qui ralentit 
-<v-clicks>
 
+<v-clicks>
 
 Sans l'expérience d'un code découplé, le TDD devient un frein. Les tests sont difficiles à écrire, et ne couvrent pas les cas réels.
 
 Le couplage entre les tests et l'implémentation du code, fait que les tests sont aussi fragiles que le code lui-même. 
 
 A chaque fois qu'on veut refactorer, on casse des tests. 
+
 </v-clicks>
 
 <!-- 
@@ -360,7 +363,7 @@ C'est Sauron qui a gagné cette bataille-là, en 2008.
 
 ---
 layout: image
-image: images/Gandalf-Balrog.jpg
+image: /images/Gandalf-Balrog.jpg
 backgroundSize: contain
 --- 
 
