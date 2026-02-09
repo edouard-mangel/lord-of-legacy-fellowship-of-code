@@ -1,0 +1,23 @@
+image: node:lts
+
+cache:
+  paths:
+    - node_modules/
+    - .pnpm-store/
+
+before_script:
+  - corepack enable
+  - corepack prepare pnpm@latest --activate
+  - pnpm config set store-dir .pnpm-store
+  - pnpm install
+
+pages:
+  stage: deploy
+  script:
+    - pnpm build --base /lord-of-legacy/
+    - mv dist public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
