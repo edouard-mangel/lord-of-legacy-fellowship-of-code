@@ -76,6 +76,19 @@ La réunion d'architecture classique. Tout le monde a son avis. Personne n'est d
 Finalement, c'est Frodon qui propose de détruire l'Anneau. C'est accepté, mais personne ne sait comment faire.
 -->
 
+--- 
+layout: image
+image: /images/One_does_not_simply.jpg
+backgroundSize: contain
+--- 
+
+# Boromir (Product Owner)
+
+## "On ne peut pas se permettre de refactorer tout le code. Nos users attendent des features."
+
+
+
+
 ---
 zoom: 0.9
 ---
@@ -113,6 +126,50 @@ Mission confiée à une petite équipe (Frodon + support).
 L'ADR (Architecture Decision Record) du Conseil d'Elrond.
 -->
 
+
+---
+layout: two-cols-header
+---
+
+# Le Conseil d'Elrond
+
+## La grande réunion d'architecture
+
+
+
+**Elrond clôture le Conseil :**
+
+*"C'est donc décidé, nous allons faire le refactoring nécessaire pour réduire notre dépendance à l'Anneau Unique."*
+
+
+::left:: 
+
+
+**Participants :**
+
+- Un magicien (l'engineering manager)
+- Boromir (Product Owner)
+- Aragorn (Scrum Master)
+- Legolas (dev frontend)
+- Gimli (dev Backend)  
+- Frodon (Ops Junior)
+
+
+
+::right::
+
+~~Durée prévue : 1 heure~~
+
+**Durée réelle :** **4 heures**
+
+
+<!--
+La réunion d'architecture classique. Tout le monde a son avis. Personne n'est d'accord.
+
+Finalement, c'est Frodon qui propose de détruire l'Anneau. C'est accepté, mais personne ne sait comment faire.
+-->
+
+
 ---
 zoom: 0.9
 layout: image
@@ -137,5 +194,3 @@ backgroundSize: 115%
 Une équipe bien équilibrée. Sur le papier.
 -->
 
----
-layout: intro

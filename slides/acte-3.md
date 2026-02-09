@@ -379,8 +379,10 @@ L'équipe doit continuer sans lui.
 -->
 
 ---
+layout: image
+image: /images/fly-you-fools.gif
+backgroundSize: contain
+---
 
 # "Fly, you fools!"
 
----
-layout: intro

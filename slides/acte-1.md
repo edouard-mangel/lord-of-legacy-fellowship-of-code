@@ -153,6 +153,7 @@ Nos amis pourront-ils agir malgré leur rigidité ?
 </v-clicks>
 
 <!--
+
 Supposés cadrer les déploiements et assurer la qualité des livrables, 
 Les outils peuvent vite devenir des freins plutôt que des leviers de productivité
 
