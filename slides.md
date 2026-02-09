@@ -21,6 +21,9 @@ transition: slide-left
 mdc: true
 # duration of the presentation
 duration: 45min
+layout: cover
+background: /images/lord-of-the-rings.jpg
+
 ---
 
 # Le Seigneur du Legacy 
@@ -36,7 +39,6 @@ Lever la main si vous avez déjà entendu "c'était mieux avant, quand Jean-Mich
 
 ---
 layout: intro
-image: /images/
 ---
 
 # Introduction
@@ -51,7 +53,7 @@ image: /images/
 
 - De refactoring, 
 
-- De mes troubles liés au stress post-traumatique
+- De mes troubles liés au stress post-traumatique 
 
 </v-clicks>
 
@@ -559,7 +561,7 @@ layout: intro
 
 ---
 layout: image-right
-image: /images/Caradhras.jpg
+image: /images/Caradhras.png
 backgroundSize: 140%
 ---
 
@@ -593,7 +595,7 @@ Mais ça prend trop de temps. Le business n'attend pas.
 
 ---
 layout: image-right
-image: /images/Caradhras.jpg
+image: /images/Caradhras.png
 backgroundSize: 140%
 zoom: 0.9
 ---
@@ -1124,41 +1126,6 @@ layout: intro
 Résumé des leçons du premier film.
 -->
 
----
-
-# Le retour de Gandalf
-
-## Spoiler du film 2
-
-<!-- Image suggestion : Gandalf le Blanc -->
-
-<v-click>
-
-Il revient.
-
-Gandalf le Gris devient Gandalf le Blanc.
-
-</v-click>
-
-<v-click>
-
-Le tech lead revient de sa réécriture.
-
-Il a vu des choses. Il a changé.
-
-</v-click>
-
-<v-click>
-
-*"J'ai combattu le Balrog. J'ai réécrit le core en Kotlin."*
-
-</v-click>
-
-<!--
-Teaser pour la suite.
-Le tech lead revient de sa mission impossible.
-Il est transformé.
--->
 
 ---
 
@@ -1178,8 +1145,8 @@ Il est transformé.
 
 <br>
 
-*"Ne touchez pas aux frameworks maison, ça ne finit jamais bien."*
+*"Ne touchez pas aux frameworks maison, ça ne vieillit jamais bien."*
 
-— Gandalf (certainement)
+— Edouard Mangel (assurément)
 
 </v-click>
