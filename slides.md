@@ -375,6 +375,10 @@ Les outils
 
 -->
 
+--- 
+
+# 
+
 ---
 layout: intro
 ---
@@ -387,35 +391,6 @@ layout: intro
 
 ---
 layout: image-right
-image: /images/Fondcombe.webp
-backgroundSize: contain
----
-
-# Fondcombe
-
-## L'architecture review
-
-<!-- Image suggestion : Fondcombe, majestueuse -->
-
-- C'est stable
-- C'est beau
-- Ça fait 6000 ans que ça tourne
-
-<v-click>
-
-Fondcombe, c'est le monolithe bien maintenu.
-
-L'exception .
-
-</v-click>
-
-<!--
-Fondcombe c'est le système legacy qui marche. Celui que tout le monde cite en exemple.
-"Regarde, EDF a un COBOL de 40 ans qui marche très bien."
--->
-
----
-layout: image-right
 image: /images/Elrond.jpg
 backgroundSize: contain
 ---
@@ -424,17 +399,9 @@ backgroundSize: contain
 
 ## Le Staff Engineer
 
-- Il était là quand le système a été conçu
-- Il a vu des architectures naître et mourir
 - Il a survécu à la migration Oracle → PostgreSQL de 2014
 
-<v-click>
-
-- Il a des opinions sur les microservices
-
 *"J'étais là, Gandalf. J'étais là il y a 3000 ans, quand Isildur a refusé de merger la PR."*
-
-</v-click>
 
 <!--
 Le Staff Engineer qui a tout vu. Il te regarde avec ce regard qui dit "j'ai déjà vu ça échouer".
