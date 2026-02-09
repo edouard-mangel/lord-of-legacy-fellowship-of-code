@@ -371,7 +371,7 @@ Nos amis pourront-ils agir malgré leur rigidité ?
 
 <!--
 Supposés cadrer les déploiements et assurer la qualité des livrables, 
-Les outils 
+Les outils peuvent vite devenir des freins plutôt que des leviers de productivité
 
 -->
 
@@ -435,9 +435,10 @@ Nous devons décider : que faire de l'Anneau ?"*
 <v-clicks>
 
 - Un magicien (l'engineering manager)
+- Boromir (Product Owner)
+- Aragorn (Scrum Master)
 - Legolas (dev frontend)
 - Gimli (dev Backend)  
-- Boromir (Product Owner)
 - Hobbits (l'équipe ops)
 
 </v-clicks>
@@ -454,33 +455,8 @@ Nous devons décider : que faire de l'Anneau ?"*
 
 <!--
 La réunion d'architecture classique. Tout le monde a son avis. Personne n'est d'accord.
--->
 
----
-
-# Le Conseil d'Elrond
-
-## Les échanges
-
-<v-clicks>  
-
-**Gimli** : *"On n'a qu'à réécrire from scratch !"* 💥
-
-**Legolas** : *"Les nains ne comprennent rien à l'architecture clean !"* 🏹
-
-**Boromir** : *"Utilisons l'Anneau contre Sauron ! Servons-nous de la complexité !"*
-
-**Elrond** : *"L'Anneau ne peut servir qu'un seul maître. Il retournera à Sauron."*
-
-**Gandalf** : *"Il n'y a qu'un choix. L'Anneau doit être détruit dans le Mordor."*
-
-**Frodon** : *"...je peux prendre le ticket."*
-
-</v-clicks>
-
-<!--
-Gimli veut tout réécrire. Legolas veut du clean code. Boromir veut utiliser la dette pour livrer plus vite.
-Et c'est le junior qui se retrouve avec le ticket.
+Finalement, c'est Frodon qui propose de détruire l'Anneau. C'est accepté, mais personne ne sait comment faire.
 -->
 
 ---
@@ -556,6 +532,10 @@ layout: intro
 *Choix de la stratégie, et des technos*
 
 ---
+layout: image-right
+image: /images/Caradhras.jpg
+backgroundSize: 140%
+---
 
 # Caradhras
 
@@ -586,8 +566,73 @@ Mais ça prend trop de temps. Le business n'attend pas.
 -->
 
 ---
+layout: image-right
+image: /images/Caradhras.jpg
+backgroundSize: 140%
+zoom: 0.9
+---
+
+# L'échec de la refonte malgré les "Bonnes pratiques"
+Malgré une architecture clean, des patterns respectés, et une équipe compétente, la refonte échoue.
+
+## Le TDD qui ralentit 
+<v-clicks>
+
+
+Sans l'expérience d'un code découplé, le TDD devient un frein. Les tests sont difficiles à écrire, et ne couvrent pas les cas réels.
+
+Le couplage entre les tests et l'implémentation du code, fait que les tests sont aussi fragiles que le code lui-même. 
+
+A chaque fois qu'on veut refactorer, on casse des tests. 
+</v-clicks>
+
+<!-- 
+Mettre des exemples, faire des passes décisives sur les conrérences d'après. 
+
+
+
+-->
+
+--- 
+
+# Mais alors, que faire ?
+Si les tests unitaires ne sont pas la solution, quelle est l'alternative ?
+
+## Et si le problème était unitaire ? 
+
+Quand on prend la définition d'"unitaire" dans le sens de "test qui teste une unité de code isolée", on couple les tests à la structure du code.
+
+<v-click>
+
+## Et si on se demandait à quoi sert un test ? 
+</v-click>
+
+<v-click>
+
+**Un test, c'est un outil au service de notre processus d'assurance qualité.**
+
+</v-click>
+
+<v-click>
+
+Un bon test doit donc : 
+</v-click>
+
+<v-clicks>
+
+- Avertir que le système n'a plus le même comportement qu'avant.
+
+- Nous donner confiance pour faire des changements. 
+
+- Nous permettre de refactorer sans peur.
+
+</v-clicks>
+
+
+---
 
 # Plus le choix 
+La refonte complète est trop risquée, trop longue, et a déjà échoué.
 
 ## D'une refonte globale à un refactoring progressif
 
@@ -715,6 +760,47 @@ L'équipe qui a essayé de refactorer le framework en 2019.
 On n'en a plus jamais entendu parler.
 -->
 
+--- 
+layout: image-right
+image: /images/Gandalf_confused.jpg
+---
+
+# I have no memory of this place
+
+## Un bon magicien se fie à son nez 
+
+### Les code smells comme outils de détection des problèmes de design
+
+<v-click>
+
+Les code smells, c'est un peu comme les odeurs dans la cuisine. 
+
+- On n'est pas sûrs qu'il y a un problème, mais ça sent mauvais.
+
+</v-click>
+
+
+--- 
+
+# Les code smells : Couplers
+
+
+## Les signes qui ne trompent pas
+
+<v-clicks>
+
+- Classes qui importent des dizaines de packages différents 
+
+- Classes qui font appel à des méthodes d'autres classes sans que ce soit évident. 
+
+- La logique métier est dispersée dans tout le code, au lieu d'être centralisée. 
+
+- Loi de Déméter violée : les objets ne parlent qu'à leurs amis proches, pas à des étrangers.
+</v-clicks>
+
+
+
+
 ---
 
 # Les gobelins
@@ -741,7 +827,7 @@ Ils sont partout, dans tous les recoins.
 
 ---
 layout: image-right
-image: /images/balrog-fire.jpg
+image: /images/balrog.jpg
 ---
 
 # Le Balrog
@@ -761,15 +847,7 @@ image: /images/balrog-fire.jpg
 
 **Ce n'est pas juste une dette technique.**
 
-C'est la philosophie de Sauron, gravée dans les fondations du framework.
-
-</v-click>
-
-<v-click>
-
-**Le Balrog = CVE 10/10**
-
-Une faille de sécurité impossible à patcher.
+C'est une faille de sécurité impossible à patcher.
 
 *"You shall not pass... this code review."*
 
@@ -783,32 +861,15 @@ C'est Sauron qui a gagné cette bataille-là, en 2008.
 -->
 
 ---
+layout: image
+image: images/Gandalf-Balrog.jpg
+backgroundSize: contain
+--- 
 
 # Le sacrifice de Gandalf
+## *"Ce mal est au-delà de vos compétences. Fuyez !"*
 
-## Le manager qui prend sur lui
 
-<!-- Image suggestion : Gandalf face au Balrog -->
-
-*"Ce mal est au-delà de vos compétences. Fuyez !"*
-
-<v-click>
-
-**Traduction :**
-
-*"Cette réécriture est au-delà de vos sprints. Continuez les features."*
-
-*"Je m'occupe du Balrog."*
-
-</v-click>
-
-<v-click>
-
-Gandalf tombe avec le Balrog.
-
-Le tech lead part en réécriture complète pendant que l'équipe continue.
-
-</v-click>
 
 <!--
 Le manager/tech lead qui prend sur lui la réécriture.
