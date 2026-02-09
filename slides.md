@@ -29,10 +29,36 @@ duration: 45min
 
 *"Un code pour les gouverner tous, un code pour les lier..."*
 
-
 <!-- 
 Accroche : Qui ici a déjà travaillé sur un "framework maison" ?
 Lever la main si vous avez déjà entendu "c'était mieux avant, quand Jean-Michel était là"
+-->
+
+---
+layout: intro
+image: /images/
+---
+
+# Introduction
+
+## De quoi allons-nous parler ? 
+
+- De Legacy, 
+
+<v-clicks>
+
+- De couplage,
+
+- De refactoring, 
+
+- De mes troubles liés au stress post-traumatique
+
+</v-clicks>
+
+<!-- 
+
+Il est encore temps d'appliquer la loi des deux pieds ;)
+
 -->
 
 ---
@@ -798,8 +824,31 @@ Les code smells, c'est un peu comme les odeurs dans la cuisine.
 - Loi de Déméter violée : les objets ne parlent qu'à leurs amis proches, pas à des étrangers.
 </v-clicks>
 
+---
+layout: two-cols-header
+--- 
 
 
+# Exemple 💩
+
+```csharp
+
+public class User
+{
+    public int Id {get; private set;}
+    public int Age { get; set; }
+
+    /* ... Plein de code ... */
+}
+
+public class UserValidator
+{
+    public bool CanVote(User user) => theOneRing.Instance().getUser(user.Id).user.Age >= 18;
+    public bool CanDrive(User user) => theOneRing.Instance().getUser(user.Id).user.Age >= 18;
+    public bool CanBuyAlcohol(User user) => theOneRing.Instance().getUser(user.Id).user.Age >= 18;
+}
+
+```
 
 ---
 
