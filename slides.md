@@ -101,21 +101,37 @@ backgroundSize: contain
 ---
 
 ---
+zoom: 1.2
+--- 
 
 # Un anneau pour les coupler tous 
 
 ## Le couplage, qu'est-ce que c'est ? 
 
+<br/>
+
 <v-clicks>
 
 - Une mesure pour mesurer le volume d'informations échangé par 2 composants. 
 
-- On parle de couplage « fort » ou « serré » entre deux composants s’ils échangent beaucoup de données. 
+<br/>
 
-- Au contraire, on parle de couplage faible s’ils sont indépendants ou s’ils échangent un minimum de données
+- Plus des composants partagent d'information, et plus la modification d'un des deux nécessite de modifier l'autre. 
+
+<br/> 
+
+- 
 
 </v-clicks>
 
+
+
+<!-- 
+
+On parle de couplage « fort » ou « serré » entre deux composants s’ils échangent beaucoup de données. 
+
+- Au contraire, on parle de couplage faible s’ils sont indépendants ou s’ils échangent un minimum de données
+-->
 
 ---
 
@@ -149,6 +165,37 @@ Un monolithe si enchevêtré que personne n’ose plus y toucher…
 </v-click>
 
 
+---
+
+# Une forteresse bâtie sur du sable 
+If it works, don't fix it ! 
+
+## Les conséquences 
+
+<v-click>
+
+❌ On ne refactore plus
+
+→ La structure du code pourrit petit à petit
+</v-click>
+
+<v-click>
+
+❌ On néglige la qualité
+
+→ On passe son temps à appliquer des pansements, on n'a pas le temps pour les changements profonds
+</v-click>
+
+<v-click>
+
+❌ On ne peut plus rien planifier
+
+→ Les tickets restent dans un état "presque fini" pendant des semaines.
+</v-click>
+
+
+
+
 --- 
 layout: image 
 image: images/orcs.jpg
@@ -161,23 +208,21 @@ backgroundSize: 70%
 layout: statement
 --- 
 
-# La menace grandissante
+## Une menace grandissante
 
-## La concurrence arrive 
+# La concurrence arrive !
 
 Pendant que les efforts sont concentrés sur la maintenance du legacy, des start-ups travaillent dans l'ombre et menacent le marché de LegacyCorp. 
 
 
 ---
-layout: image-right
+layout: image
 image: /images/Frodo_Baggins-house.jpg
 ---
 
 # Acte I
 
 ## Un voyage inattendu
-
-*Ou comment un projet greenfield devient un cauchemar legacy*
 
 ---
 layout: image-right
@@ -213,22 +258,17 @@ layout: image
 image: images/bilbo_baggins.jpg
 ---
 
-# Bilbo s'en va
+# Le départ du dev senior
 
-## Le départ du dev senior
-
-<v-click>
+<!--
 
 - Il a tout construit, il connaît tous les secrets.
 - Il part pour "faire un métier qui a du sens"
-- Il laisse ses affaires à son mentoré, Frodon
 
-</v-click>
-
-
-<!--
 Le burnout du dev senior. Il a porté le projet pendant 10 ans. Il part.
+
 Il laisse "tout ce qu'il possède" à Frodon.
+
 Spoiler : c'est pas que des cadeaux.
 -->
 
@@ -272,16 +312,13 @@ zoom: 0.9
 ## Engineering manager et mentor de Bilbo
 
 
-- Contributeur Unix
+- Contributeur Unix depuis le siècle dernier
 - Dernier dev de l'entreprise présent à sa création
 - A mené de nombreuses batailles contre la complexité
 - Tech lead originel du framework maison
 <v-click>
 
-- **Il sait que Sauron a forgé l'Anneau**
-
-
-*"Sauron a créé cet Anneau. Sa complexité grandit chaque jour. Il doit être détruit."*
+- **Il sait la menace que représente l'Anneau**
 
 </v-click>
 
@@ -322,28 +359,20 @@ backgroundSize: contain
 image: /images/Frodo-and-Sam-prod-incident.jpg
 ---
 
-# Les Cavaliers Noirs
-
-## Les bugs de régression
-
-**Les Nazgûl sont les agents de Sauron.**
-
-
-- Ils arrivent toujours les vendredi
-- Ils ne meurent jamais vraiment
+# Les process infernaux
+Nos amis pourront-ils agir malgré leur rigidité ? 
 
 <v-clicks>
 
-- Ils sentent la peur (et les déploiements)
+- Ils rôdent à l'affut de quelqu'un qui aurait tenté de merger sans les 2 pouces et 80% de coverage. 
 - **Ils sont attirés par ceux qui touchent à l'Anneau**
 
 </v-clicks>
 
 <!--
-Les Nazgûl sont les serviteurs de Sauron.
-Ils chassent quiconque essaie de modifier l'Anneau (refactorer le couplage).
-Les incidents de production sont la façon dont Sauron défend son architecture.
-Tu crois les avoir vaincus, ils reviennent - car Sauron les rappelle toujours.
+Supposés cadrer les déploiements et assurer la qualité des livrables, 
+Les outils 
+
 -->
 
 ---
