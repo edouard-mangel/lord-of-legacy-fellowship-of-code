@@ -21,8 +21,8 @@ transition: slide-left
 mdc: true
 # duration of the presentation
 duration: 45min
-layout: cover
-background: /images/lord-of-the-rings.jpg
+layout: image
+image: /images/lord-of-the-rings.jpg
 
 ---
 
@@ -31,6 +31,56 @@ background: /images/lord-of-the-rings.jpg
 ## La Communauté du Code
 
 *"Un code pour les gouverner tous, un code pour les lier..."*
+
+<style scoped>
+/* Golden yellow with outline for H1 and H2 on first slide */
+h1 {
+  font-size: 3em !important; /* Much larger for impact */
+  color: #FFD700 !important;
+  /* Dark outline effect using multiple shadows all around */
+  text-shadow: 
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000,
+     3px  3px 8px rgba(0, 0, 0, 0.9) !important;
+}
+
+h2 {
+  font-size: 2em !important; /* Larger for subtitle */
+  color: #FFD700 !important;
+  /* Dark outline effect using multiple shadows all around */
+  text-shadow: 
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000,
+     3px  3px 8px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* White italic text with shadow and centered */
+p {
+  font-size: 1.6em !important; /* Slightly bigger */
+  text-align: center !important;
+  color: white !important;
+  position: absolute !important;
+  top: 50% !important; /* Center vertically */
+  left: 50% !important; /* Center horizontally */
+  transform: translate(-50%, -50%) !important;
+  width: 80% !important;
+  /* Dark shadow for readability */
+  text-shadow: 
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000,
+     2px  2px 6px rgba(0, 0, 0, 0.9) !important;
+}
+
+em {
+  color: white !important;
+}
+</style>
 
 <!-- 
 Accroche : Qui ici a déjà travaillé sur un "framework maison" ?
