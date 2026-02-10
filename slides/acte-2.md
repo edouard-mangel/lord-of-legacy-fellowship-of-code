@@ -1,10 +1,12 @@
+---
+layout: image
+image: /images/Council.png
+backgroundSize: contain
+---
 
+# Acte II : Le Conseil
 
-# Acte II
-
-## Le Conseil
-
-*Ou comment 4 heures de réunion n'aboutissent à rien*
+## *Ou comment 4 heures de réunion n'aboutissent à rien*
 
 ---
 layout: image-right
@@ -25,67 +27,138 @@ Le Staff Engineer qui a tout vu. Il te regarde avec ce regard qui dit "j'ai déj
 -->
 
 ---
-layout: two-cols-header
+layout: image-left
+image: /images/Elrond.jpg
+backgroundSize: contain
 ---
 
 # Le Conseil d'Elrond
 
 ## La grande réunion d'architecture
+<br>
 
 <v-click>
 
-**Elrond ouvre le Conseil :**
+#### "Nous sommes réunis ici pour une raison. 
 
-*"Nous sommes réunis ici pour une raison. Sauron a forgé l'Anneau Unique.
-Sa complexité corrompt nos systèmes. Il devient plus puissant chaque jour.
-Nous devons décider : que faire de l'Anneau ?"*
+#### Le couplage induit par l'Anneau Unique.
+<br>
 
-</v-click>
+#### Sa complexité corrompt nos systèmes. Il devient plus puissant chaque jour.
+<br>
 
-::left:: 
-
-<v-click>
-
-**Participants :**
-
-</v-click>
-<v-clicks>
-
-- Un magicien (l'engineering manager)
-- Boromir (Product Owner)
-- Aragorn (Scrum Master)
-- Legolas (dev frontend)
-- Gimli (dev Backend)  
-- Frodon (Ops Junior)
-
-</v-clicks>
-
-::right::
-
-<v-click>
-
-**Durée prévue :** 1 heure
-
-**Durée réelle :** 4 heures
+#### Nous devons décider : que faire de l'Anneau ?"
 
 </v-click>
 
-<!--
-La réunion d'architecture classique. Tout le monde a son avis. Personne n'est d'accord.
 
-Finalement, c'est Frodon qui propose de détruire l'Anneau. C'est accepté, mais personne ne sait comment faire.
--->
-
---- 
-layout: image
-image: /images/One_does_not_simply.jpg
+---
+layout: image-left
+image: /images/Boromir-buste.jpg
 backgroundSize: contain
---- 
+---
 
 # Boromir (Product Owner)
 
-## "On ne peut pas se permettre de refactorer tout le code. Nos users attendent des features."
+## Pourquoi ne pas utiliser l'anneau ? 
 
+<br>
+
+## En utilisant l'anneau à notre avantage, nous pourrons livrer plus vite !
+
+---
+layout: image-right
+image: /images/Aragorn_buste.jpg
+backgroundSize: contain
+---
+
+# Aragorn (Coach agile externalisé)
+
+## L'anneau est trop dangereux, il faut le détruire !
+
+<br>
+
+
+---
+layout: image-left
+image: /images/Boromir-buste.jpg
+backgroundSize: contain
+---
+
+# Boromir (Product Owner)
+
+## Qu'est-ce qu'un scrum master connaît à l'architecture ? 
+
+
+---
+layout: image-right
+image: /images/Legolas-upset.jpg
+backgroundSize: contain
+---
+
+# Legolas (Dev Frontend)
+
+## Aragorn n'est pas un simple Scrum Master
+<br>
+
+## C'est l'héritier légitime du trône d'Isildur. 
+<br>
+
+## C'est l'architecte légitime du module de paiements. 
+
+
+---
+layout: image-left
+image: /images/Boromir-buste.jpg
+backgroundSize: contain
+---
+
+# Boromir (Product Owner)
+
+## Le module de paiements est un module critique, il n'a pas besoin d'un architecte. 
+
+<br>
+
+## L'équipe paiement est autonome, elle n'a pas besoin d'un architecte "tour d'ivoire" pour faire son travail.
+
+--- 
+
+# La réunion d'architecture classique
+
+
+## Personne n'est d'accord, tout le monde a son avis, et personne ne veut faire de compromis.
+
+
+<br> 
+<br> 
+<br> 
+
+<v-click>
+
+### Jusqu'à ce que Frodon, le plus junior de l'équipe, prenne la parole :
+
+</v-click>
+
+
+--- 
+layout: image-right
+image: /images/Frodo.jpg
+backgroundSize: cover
+---
+
+# Frodon (Ops Junior)
+
+## Je peux prendre le ticket ! 
+
+
+<br> 
+<br> 
+
+## Je peux porter l'Anneau jusqu'au Mordor (production) et le détruire dans les feux de la Montagne du Destin !
+
+
+<br> 
+<br> 
 
 
 
@@ -193,3 +266,14 @@ backgroundSize: 115%
 | Merry & Pippin | Alternants  | Là par accident |
 Une équipe bien équilibrée. Sur le papier.
 -->
+
+
+--- 
+layout: image
+image: /images/One_does_not_simply.jpg
+backgroundSize: contain
+--- 
+
+# Boromir (Product Owner)
+
+## "On ne peut pas se permettre de refactorer tout le code. Nos users attendent des features."

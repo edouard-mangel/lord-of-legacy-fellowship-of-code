@@ -1,0 +1,6 @@
+[  832056ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3030/slides/acte-2.md__slidev_23.md?import&t=1770766242668:0
+[  832059ms] [ERROR] [vite] Failed to reload /slides/acte-2.md__slidev_23.md. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:3030/@vite/client:808
+[  845475ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3030/slides/acte-2.md__slidev_23.md?import&t=1770766256122:0
+[  845475ms] [ERROR] [vite] Failed to reload /slides/acte-2.md__slidev_23.md. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:3030/@vite/client:808
+[ 1945432ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3030/slides/acte-2.md__slidev_30.md?import&t=1770767356067:0
+[ 1945433ms] [ERROR] [vite] Failed to reload /slides/acte-2.md__slidev_30.md. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:3030/@vite/client:808

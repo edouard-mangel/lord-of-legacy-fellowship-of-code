@@ -122,7 +122,7 @@ backgroundSize: contain
 
 # Aragorn
 
-## Le Scrum Master
+## Le coach agile
 
 - Personne ne sait d'où il vient
 
