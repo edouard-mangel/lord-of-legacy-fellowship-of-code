@@ -108,105 +108,6 @@ Un bon test doit donc :
 
 ---
 
-# Tests Couplés à l'Implémentation 💩
-
-## Quand les tests deviennent un boulet
-
-```csharp
-[TestClass]
-public class UserValidatorTests
-{
-    [TestMethod]
-    public void CanVote_UserOver18_ReturnsTrue()
-    {
-        // Arrange - Tests couplés aux détails d'implémentation
-        var mockRing = new Mock<TheOneRing>();
-        var user = new User { Id = 1, Age = 25 };
-        var ringUser = new RingUser { user = user };
-        
-        mockRing.Setup(r => r.getUser(1)).Returns(ringUser);
-        TheOneRing.SetInstance(mockRing.Object); // Singleton mocké 🤮
-        
-        var validator = new UserValidator();
-        
-        // Act
-        var result = validator.CanVote(user);
-        
-        // Assert
-        Assert.IsTrue(result);
-        mockRing.Verify(r => r.getUser(1), Times.Once()); // Vérifie HOW
-    }
-}
-```
-
-<v-clicks>
-
-- Tests qui vérifient **comment** le code fonctionne
-- Si vous refactorez pour retirer `theOneRing` → 💥 tous les tests cassent
-- Même si le comportement métier reste identique
-
-</v-clicks>
-
-<!--
-Les tests couplés à l'implémentation.
-Ils connaissent tous les détails internes.
-Ils vous empêchent de refactorer.
-C'est comme porter l'Anneau - ça vous corrompt.
--->
-
----
-
-# Tests Couplés au Comportement ✅
-
-## La voie de la résilience
-
-```csharp
-[TestClass]
-public class UserValidatorTests
-{
-    [TestMethod]
-    public void CanVote_UserOver18_ReturnsTrue()
-    {
-        // Arrange - Test le comportement attendu
-        var user = new User { Id = 1, Age = 25 };
-        var validator = new UserValidator();
-        
-        // Act
-        var result = validator.CanVote(user);
-        
-        // Assert
-        Assert.IsTrue(result); // Vérifie WHAT, pas HOW
-    }
-    
-    [TestMethod]
-    public void CanVote_UserUnder18_ReturnsFalse()
-    {
-        var user = new User { Id = 2, Age = 16 };
-        var validator = new UserValidator();
-        
-        Assert.IsFalse(validator.CanVote(user));
-    }
-}
-```
-
-<v-clicks>
-
-- Tests qui vérifient **ce que** le code fait
-- Refactorisez l'implémentation → les tests passent toujours
-- Tant que le contrat métier reste le même
-
-</v-clicks>
-
-<!--
-Les tests couplés au comportement.
-Ils testent le contrat, pas l'implémentation.
-Ils vous permettent de refactorer en toute confiance.
-Comme les elfes - ils sont résilients face au changement.
--->
-
-
----
-
 # Plus le choix 
 La refonte complète est trop risquée, trop longue, et a déjà échoué.
 
@@ -237,6 +138,108 @@ La refonte complète est trop risquée, trop longue, et a déjà échoué.
 <!--
 Gandalf était le tech lead de l'équipe Framework.
 Il y a longtemps. Très longtemps.
+-->
+
+---
+
+# Tests Couplés à l'Implémentation 💩
+
+## Tester chaque méthode publique
+
+```csharp
+[TestClass]
+public class UserValidatorTests
+{
+    [TestMethod]
+    public void CanVote_Returns_True_When_Over18()
+    {
+        var validator = new UserValidator();
+        var user = new User { Id = 1, Age = 25 };
+        Assert.IsTrue(validator.CanVote(user));
+    }
+
+    [TestMethod]
+    public void CanDrive_Returns_True_When_Over18()
+    {
+        var validator = new UserValidator();
+        var user = new User { Id = 1, Age = 25 };
+        Assert.IsTrue(validator.CanDrive(user));
+    }
+
+    [TestMethod]
+    public void CanBuyAlcohol_Returns_True_When_Over18()
+    {
+        var validator = new UserValidator();
+        var user = new User { Id = 1, Age = 25 };
+        Assert.IsTrue(validator.CanBuyAlcohol(user));
+    }
+}
+```
+
+<v-clicks>
+
+- Un test par méthode publique
+- Si vous changez l'implémentation → tous les tests à réécrire
+- Duplication massive du code de test
+
+</v-clicks>
+
+<!--
+Les tests couplés à l'implémentation.
+On teste chaque méthode individuellement.
+Si on refactore en regroupant la logique, tous les tests cassent.
+-->
+
+---
+
+# Tests Couplés au Comportement ✅
+
+## Tester le cas d'usage
+
+```csharp
+[TestClass]
+public class UserRegistrationTests
+{
+    [TestMethod]
+    public void AdultUser_CanRegisterForVoting()
+    {
+        // Arrange
+        var registrationService = new RegistrationService();
+        var user = new User { Id = 1, Age = 25 };
+
+        // Act
+        registrationService.RegisterForElection(user);
+
+        // Assert - Vérifie le changement dans le système
+        var registeredUsers = registrationService.GetRegisteredVoters();
+        Assert.Contains(user, registeredUsers);
+    }
+
+    [TestMethod]
+    public void MinorUser_CannotRegisterForVoting()
+    {
+        var registrationService = new RegistrationService();
+        var user = new User { Id = 2, Age = 16 };
+
+        registrationService.RegisterForElection(user);
+
+        Assert.Empty(registrationService.GetRegisteredVoters());
+    }
+}
+```
+
+<v-clicks>
+
+- Test du cas d'usage métier complet
+- Vérifie le changement d'état du système
+- Résilient aux refactorings internes
+
+</v-clicks>
+
+<!--
+Les tests couplés au comportement.
+On teste le scénario métier, pas les méthodes individuelles.
+On peut refactorer UserValidator sans casser les tests.
 -->
 
 ---
