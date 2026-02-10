@@ -141,40 +141,12 @@ Il y a longtemps. Très longtemps.
 -->
 
 ---
+layout: two-cols-header
+zoom: 0.9
+---
 
 # Tests Couplés à l'Implémentation 💩
-
 ## Tester chaque méthode publique
-
-```csharp
-[TestClass]
-public class UserValidatorTests
-{
-    [TestMethod]
-    public void CanVote_Returns_True_When_Over18()
-    {
-        var validator = new UserValidator();
-        var user = new User { Id = 1, Age = 25 };
-        Assert.IsTrue(validator.CanVote(user));
-    }
-
-    [TestMethod]
-    public void CanDrive_Returns_True_When_Over18()
-    {
-        var validator = new UserValidator();
-        var user = new User { Id = 1, Age = 25 };
-        Assert.IsTrue(validator.CanDrive(user));
-    }
-
-    [TestMethod]
-    public void CanBuyAlcohol_Returns_True_When_Over18()
-    {
-        var validator = new UserValidator();
-        var user = new User { Id = 1, Age = 25 };
-        Assert.IsTrue(validator.CanBuyAlcohol(user));
-    }
-}
-```
 
 <v-clicks>
 
@@ -184,6 +156,31 @@ public class UserValidatorTests
 
 </v-clicks>
 
+::left::
+
+```csharp
+[TestClass]
+public class UserValidatorTests
+{
+    [TestMethod]
+    public void CanVote_Returns_True_When_Over18()
+    {
+        var validator = new UserValidator();
+        var user = new User { Id = 1, Age = 18 };
+        Assert.IsTrue(validator.CanVote(user));
+    }
+
+    [TestMethod]
+    public void CanVote_Returns_False_When_Under18()
+    {
+        var validator = new UserValidator();
+        var user = new User { Id = 1, Age = 17 };
+        Assert.IsFalse(validator.CanVote(user));
+    }
+}
+```
+
+
 <!--
 Les tests couplés à l'implémentation.
 On teste chaque méthode individuellement.
@@ -191,10 +188,15 @@ Si on refactore en regroupant la logique, tous les tests cassent.
 -->
 
 ---
+layout: two-cols-header
+zoom: 0.9
+---
 
 # Tests Couplés au Comportement ✅
 
 ## Tester le cas d'usage
+
+::left::
 
 ```csharp
 [TestClass]
@@ -205,7 +207,7 @@ public class UserRegistrationTests
     {
         // Arrange
         var registrationService = new RegistrationService();
-        var user = new User { Id = 1, Age = 25 };
+        var user = new User { Id = 1, Age = 18 };
 
         // Act
         registrationService.RegisterForElection(user);
@@ -219,7 +221,7 @@ public class UserRegistrationTests
     public void MinorUser_CannotRegisterForVoting()
     {
         var registrationService = new RegistrationService();
-        var user = new User { Id = 2, Age = 16 };
+        var user = new User { Id = 2, Age = 17 };
 
         registrationService.RegisterForElection(user);
 
@@ -227,6 +229,8 @@ public class UserRegistrationTests
     }
 }
 ```
+
+::right::
 
 <v-clicks>
 
@@ -243,6 +247,37 @@ On peut refactorer UserValidator sans casser les tests.
 -->
 
 ---
+
+# La différence en pratique
+
+```ts {monaco-diff}
+
+[TestMethod]
+    public void CanVote_Returns_True_When_Over18()
+    {
+        var validator = new UserValidator();
+        var user = new User { Id = 1, Age = 18 };
+        Assert.IsTrue(validator.CanVote(user));
+    }
+~~~
+ [TestMethod]
+    public void AdultUser_CanRegisterForVoting()
+    {
+        // Arrange
+        var registrationService = new RegistrationService();
+        var user = new User { Id = 1, Age = 18 };
+
+        // Act
+        registrationService.RegisterForElection(user);
+
+        // Assert - Vérifie le changement dans le système
+        var registeredUsers = registrationService.GetRegisteredVoters();
+        Assert.Contains(user, registeredUsers);
+    }
+```
+
+---
+
 
 <!-- layout: image-right --> 
 
@@ -308,6 +343,10 @@ Fausse confiance.
 -->
 
 ---
+layout: image-right
+image: /images/balin.jpg
+backgroundSize: contain
+---
 
 # Le tombeau de Balin
 
@@ -315,9 +354,9 @@ Fausse confiance.
 
 <!-- Image suggestion : Le tombeau de Balin -->
 
-<v-click>
-
 *"Ici repose Balin, Seigneur de la Moria"*
+
+<v-click>
 
 ```markdown
 ## Post-Mortem: Tentative de refacto du Framework
@@ -329,10 +368,12 @@ Fausse confiance.
 **Résultat:** Projet abandonné après 6 mois
 
 **Dernière entrée du changelog:**
-"Nous ne pouvons plus sortir. Les régressions arrivent."
+"Nous ne pouvons plus sortir."
+"Les régressions arrivent."
 ```
 
 </v-click>
+
 
 <!--
 L'équipe qui a essayé de refactorer le framework en 2019.
