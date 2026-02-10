@@ -88,12 +88,15 @@ Lever la main si vous avez déjà entendu "c'était mieux avant, quand Jean-Mich
 -->
 
 ---
-layout: intro
+layout: image-right
+image: /images/barad-dur.jpg
 ---
 
 # Introduction
 
 ## De quoi allons-nous parler ? 
+
+<br>
 
 - De Legacy, 
 
@@ -192,17 +195,11 @@ zoom: 1.2
 
 - Une mesure pour mesurer le volume d'informations échangé par 2 composants. 
 
-<br/>
-
 - Plus des composants partagent d'information, et plus la modification d'un des deux nécessite de modifier l'autre. 
 
-<br/> 
-
-- 
+- C'est une notion transitive : si A est fortement couplé à B, et que B est fortement couplé à C, alors A et C sont aussi fortement couplés.
 
 </v-clicks>
-
-
 
 <!-- 
 
@@ -210,6 +207,34 @@ On parle de couplage « fort » ou « serré » entre deux composants s’il
 
 - Au contraire, on parle de couplage faible s’ils sont indépendants ou s’ils échangent un minimum de données
 -->
+
+--- 
+
+# 💍 Couplage fort : un enchevêtrement dangereux
+
+```mermaid
+graph LR
+  A[OrderService] -->|auth via| E[💍 UserService]
+  D[NotificationService] -->|contacts via| E
+  E -->|dépend de| B[PaymentService]
+  E -->|accède| C[InventoryService]
+  B -->|identité via| E
+  C -->|droits via| E
+  A -->|appelle| B
+  A -->|accède| C
+  B -->|notifie| D
+  B -->|dépend de| C
+  C -->|lit / écrit| D
+  D -->|rappelle| A
+
+  style A fill:#8B0000,stroke:#ff4444,color:#fff
+  style B fill:#8B0000,stroke:#ff4444,color:#fff
+  style C fill:#8B0000,stroke:#ff4444,color:#fff
+  style D fill:#8B0000,stroke:#ff4444,color:#fff
+  style E fill:#DAA520,stroke:#FFD700,color:#000,stroke-width:3px
+```
+
+<div class="text-center text-sm italic mt-2">Tous les services dépendent de UserService — l'Anneau Unique qui les lie tous.</div>
 
 ---
 

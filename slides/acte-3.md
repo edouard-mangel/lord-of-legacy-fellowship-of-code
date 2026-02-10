@@ -198,6 +198,28 @@ zoom: 0.9
 
 ::left::
 
+````md magic-move
+```csharp
+[TestClass]
+public class UserValidatorTests
+{
+    [TestMethod]
+    public void CanVote_Returns_True_When_Over18()
+    {
+        var validator = new UserValidator();
+        var user = new User { Id = 1, Age = 18 };
+        Assert.IsTrue(validator.CanVote(user));
+    }
+
+    [TestMethod]
+    public void CanVote_Returns_False_When_Under18()
+    {
+        var validator = new UserValidator();
+        var user = new User { Id = 1, Age = 17 };
+        Assert.IsFalse(validator.CanVote(user));
+    }
+}
+```
 ```csharp
 [TestClass]
 public class UserRegistrationTests
@@ -229,6 +251,7 @@ public class UserRegistrationTests
     }
 }
 ```
+````
 
 ::right::
 
@@ -247,33 +270,46 @@ On peut refactorer UserValidator sans casser les tests.
 -->
 
 ---
+layout: two-cols-header
+zoom: 0.8
+---
 
 # La différence en pratique
 
-```ts {monaco-diff}
+::left::
 
+### Couplé à l'implémentation 💩
+
+```csharp
 [TestMethod]
-    public void CanVote_Returns_True_When_Over18()
-    {
-        var validator = new UserValidator();
-        var user = new User { Id = 1, Age = 18 };
-        Assert.IsTrue(validator.CanVote(user));
-    }
-~~~
- [TestMethod]
-    public void AdultUser_CanRegisterForVoting()
-    {
-        // Arrange
-        var registrationService = new RegistrationService();
-        var user = new User { Id = 1, Age = 18 };
+public void CanVote_Returns_True_When_Over18()
+{
+    var validator = new UserValidator();
+    var user = new User { Id = 1, Age = 18 };
+    Assert.IsTrue(validator.CanVote(user));
+}
+```
 
-        // Act
-        registrationService.RegisterForElection(user);
+::right::
 
-        // Assert - Vérifie le changement dans le système
-        var registeredUsers = registrationService.GetRegisteredVoters();
-        Assert.Contains(user, registeredUsers);
-    }
+### Couplé au comportement ✅
+
+```csharp
+[TestMethod]
+public void AdultUser_CanRegisterForVoting()
+{
+    // Arrange
+    var registrationService = new RegistrationService();
+    var user = new User { Id = 1, Age = 18 };
+
+    // Act
+    registrationService.RegisterForElection(user);
+
+    // Assert
+    var registeredUsers =
+        registrationService.GetRegisteredVoters();
+    Assert.Contains(user, registeredUsers);
+}
 ```
 
 ---
@@ -425,7 +461,7 @@ layout: two-cols-header
 
 # Exemple 💩
 
-```csharp
+```csharp {*|12|13|14}
 
 public class User
 {

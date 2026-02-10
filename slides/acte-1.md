@@ -61,7 +61,7 @@ zoom: 1.5
 
 # L'héritage de Bilbo
 
-```
+```text {*|3|5|7|8-9}
 ├── src/
 │   ├── utils/
 │   │   └── OneRing.java          // NE PAS TOUCHER
@@ -96,12 +96,16 @@ zoom: 0.9
 
 
 - Contributeur Unix depuis le siècle dernier
+
 - Dernier dev de l'entreprise présent à sa création
+
 - A mené de nombreuses batailles contre la complexité
+
 - Tech lead originel du framework maison
+
 <v-click>
 
-- **Il sait la menace que représente l'Anneau**
+## Il sait la menace que représente l'Anneau
 
 </v-click>
 
@@ -121,12 +125,14 @@ backgroundSize: contain
 ## Le Scrum Master
 
 - Personne ne sait d'où il vient
+
 - Il a vu des choses dans d'autres entreprises
+
 - Il coûte cher
 
 <v-click>
 
-*"Vous pouvez m'appeler Grands-Pas."*
+## "Vous pouvez m'appeler Grands-Pas."
 
 </v-click>
 

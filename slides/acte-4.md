@@ -137,6 +137,9 @@ L'équipe la plus petite va affronter la complexité de Sauron directement.
 -->
 
 ---
+layout: image-right
+image: /images/Boromirs-Death.jpg
+---
 
 # La mort de Boromir
 
@@ -146,16 +149,21 @@ L'équipe la plus petite va affronter la complexité de Sauron directement.
 
 <v-clicks>
 
+<br/>
+
 - Il voulait livrer trop vite
+
 - Il a sous-estimé les risques
+
 - Il a voulu utiliser la dette comme feature
+
 - Il est tombé au combat
 
 </v-clicks>
 
 <v-click>
 
-*"J'aurais dû écouter la QA. J'aurais dû écouter la QA."*
+*"J'aurais dû écouter la QA."*
 
 </v-click>
 
