@@ -193,4 +193,3 @@ backgroundSize: 115%
 | Merry & Pippin | Alternants  | Là par accident |
 Une équipe bien équilibrée. Sur le papier.
 -->
-

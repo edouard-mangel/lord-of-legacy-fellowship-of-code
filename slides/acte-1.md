@@ -148,6 +148,7 @@ Nos amis pourront-ils agir malgré leur rigidité ?
 <v-clicks>
 
 - Ils rôdent à l'affut de quelqu'un qui aurait tenté de merger sans les 2 pouces et 80% de coverage. 
+
 - **Ils sont attirés par ceux qui touchent à l'Anneau**
 
 </v-clicks>

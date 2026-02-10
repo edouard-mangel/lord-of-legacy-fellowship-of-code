@@ -106,6 +106,104 @@ Un bon test doit donc :
 
 </v-clicks>
 
+---
+
+# Tests Couplés à l'Implémentation 💩
+
+## Quand les tests deviennent un boulet
+
+```csharp
+[TestClass]
+public class UserValidatorTests
+{
+    [TestMethod]
+    public void CanVote_UserOver18_ReturnsTrue()
+    {
+        // Arrange - Tests couplés aux détails d'implémentation
+        var mockRing = new Mock<TheOneRing>();
+        var user = new User { Id = 1, Age = 25 };
+        var ringUser = new RingUser { user = user };
+        
+        mockRing.Setup(r => r.getUser(1)).Returns(ringUser);
+        TheOneRing.SetInstance(mockRing.Object); // Singleton mocké 🤮
+        
+        var validator = new UserValidator();
+        
+        // Act
+        var result = validator.CanVote(user);
+        
+        // Assert
+        Assert.IsTrue(result);
+        mockRing.Verify(r => r.getUser(1), Times.Once()); // Vérifie HOW
+    }
+}
+```
+
+<v-clicks>
+
+- Tests qui vérifient **comment** le code fonctionne
+- Si vous refactorez pour retirer `theOneRing` → 💥 tous les tests cassent
+- Même si le comportement métier reste identique
+
+</v-clicks>
+
+<!--
+Les tests couplés à l'implémentation.
+Ils connaissent tous les détails internes.
+Ils vous empêchent de refactorer.
+C'est comme porter l'Anneau - ça vous corrompt.
+-->
+
+---
+
+# Tests Couplés au Comportement ✅
+
+## La voie de la résilience
+
+```csharp
+[TestClass]
+public class UserValidatorTests
+{
+    [TestMethod]
+    public void CanVote_UserOver18_ReturnsTrue()
+    {
+        // Arrange - Test le comportement attendu
+        var user = new User { Id = 1, Age = 25 };
+        var validator = new UserValidator();
+        
+        // Act
+        var result = validator.CanVote(user);
+        
+        // Assert
+        Assert.IsTrue(result); // Vérifie WHAT, pas HOW
+    }
+    
+    [TestMethod]
+    public void CanVote_UserUnder18_ReturnsFalse()
+    {
+        var user = new User { Id = 2, Age = 16 };
+        var validator = new UserValidator();
+        
+        Assert.IsFalse(validator.CanVote(user));
+    }
+}
+```
+
+<v-clicks>
+
+- Tests qui vérifient **ce que** le code fait
+- Refactorisez l'implémentation → les tests passent toujours
+- Tant que le contrat métier reste le même
+
+</v-clicks>
+
+<!--
+Les tests couplés au comportement.
+Ils testent le contrat, pas l'implémentation.
+Ils vous permettent de refactorer en toute confiance.
+Comme les elfes - ils sont résilients face au changement.
+-->
+
 
 ---
 
