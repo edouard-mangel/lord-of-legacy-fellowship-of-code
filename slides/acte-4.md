@@ -113,38 +113,6 @@ La Communauté se sépare. Chaque sous-équipe a maintenant sa mission.
 C'est le passage du monolithe aux services indépendants.
 -->
 
-
----
-layout: image-right
-image: /images/mount-doom-distant.jpg
-backgroundSize: 130%
----
-
-# Frodon et Sam : Le Voyage Commence
-
-## Direction : Mordor
-
-
-- La plus petite équipe
-- La mission la plus dangereuse
-- Détruire l'Anneau dans le Mordor (production)
-
-<v-click>
-
-- **Le voyage ne fait que commencer**
-
-
-
-*"Sauron nous attend. Mais nous devons y aller."*
-
-</v-click>
-
-<!--
-C'est ici que Fellowship se termine.
-La quête vers Mordor est lancée, mais pas terminée.
-L'équipe la plus petite va affronter la complexité de Sauron directement.
--->
-
 ---
 layout: image-right
 image: /images/Boromirs-Death.jpg
@@ -179,6 +147,40 @@ image: /images/Boromirs-Death.jpg
 <!--
 Boromir meurt parce qu'il a voulu aller trop vite.
 Le PO qui ignore les warnings.
+-->
+
+
+---
+layout: image-right
+image: /images/mount-doom-distant.jpg
+backgroundSize: 130%
+---
+
+# Frodon et Sam : Le Voyage Commence
+
+## Direction : Mordor
+
+<br>
+
+
+- La plus petite équipe
+- La mission la plus dangereuse
+- Détruire l'Anneau dans le Mordor (production)
+
+<v-click>
+
+- **Le voyage ne fait que commencer**
+
+
+
+*"Sauron nous attend. Mais nous devons y aller."*
+
+</v-click>
+
+<!--
+C'est ici que Fellowship se termine.
+La quête vers Mordor est lancée, mais pas terminée.
+L'équipe la plus petite va affronter la complexité de Sauron directement.
 -->
 
 
