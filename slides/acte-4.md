@@ -18,17 +18,17 @@ backgroundSize: 60em
 
 <!-- Image suggestion : La forêt de Lothlórien -->
 
-<v-clicks>
-
 - L'équipe se pose
 - On écrit la documentation
 - On ajoute des tests
 - On fait le deuil du code perdu
-- On pleure Gandalf (qui est en réécriture)
 
-</v-clicks>
+
+<br>
 
 <v-click>
+
+- On pleure Gandalf (qui est en réécriture)
 
 Lothlórien, c'est le sprint de stabilisation après la crise.
 
@@ -40,6 +40,9 @@ Sprint de stab. Documentation. Tests. Rétrospective.
 -->
 
 ---
+layout: image-right
+image: /images/Galadriel1.jpg
+--- 
 
 # Galadriel
 
@@ -89,6 +92,7 @@ Elle leur donne ce qu'il faut pour survivre.
 
 ---
 layout: image-right
+image: /images/Gimmethering.webp
 --- 
 
 # Le backlog repriorisé
@@ -113,22 +117,23 @@ C'est le passage du monolithe aux services indépendants.
 ---
 layout: image-right
 image: /images/mount-doom-distant.jpg
+backgroundSize: 130%
 ---
 
 # Frodon et Sam : Le Voyage Commence
 
 ## Direction : Mordor
 
-<v-clicks>
 
 - La plus petite équipe
 - La mission la plus dangereuse
 - Détruire l'Anneau dans le Mordor (production)
-- **Le voyage ne fait que commencer**
-
-</v-clicks>
 
 <v-click>
+
+- **Le voyage ne fait que commencer**
+
+
 
 *"Sauron nous attend. Mais nous devons y aller."*
 
@@ -184,17 +189,16 @@ layout: intro
 # Épilogue
 
 ## Les leçons de la Terre du Milieu
+<br>
 
 <v-clicks>
 
 1. **La Comté** → Profitez du greenfield, ça ne dure pas
-2. **L'Anneau** → Le couplage fort détruit tout
-3. **Le Conseil** → Les réunions d'archi, c'est long mais nécessaire
-4. **La Communauté** → Les équipes découplées sont résilientes
-5. **La Moria** → Le framework maison vous rattrapera
-6. **Le Balrog** → La dette technique existentielle existe
-7. **Lothlórien** → Prenez le temps de stabiliser
-8. **Amon Hen** → Parfois, il faut se séparer pour avancer
+2. **L'Anneau** → Le couplage non maîtrisé est un poison lent
+3. **La Moria** → Le framework maison vous rattrapera
+4. **Le Balrog** → La dette technique existentielle existe
+5. **Lothlórien** → Prenez le temps de stabiliser
+6. **Amon Hen** → Parfois, il faut se séparer pour avancer
 
 </v-clicks>
 
@@ -226,3 +230,9 @@ Résumé des leçons du premier film.
 — Edouard Mangel (assurément)
 
 </v-click>
+
+--- 
+layout: image
+image: /images/spons.jpg
+--- 
+

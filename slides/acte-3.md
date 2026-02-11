@@ -664,7 +664,7 @@ image: /images/Horde.png
 
 <!-- Image suggestion : L'attaque des gobelins -->
 
-<v-clicks>
+<v-click>
 
 - Tu fixes un bug
 - Trois régressions apparaissent
@@ -672,7 +672,7 @@ image: /images/Horde.png
 - Huit nouveaux bugs surgissent
 - Ils viennent de partout
 
-</v-clicks>
+</v-click>
 
 <!--
 Les bugs dans un framework legacy.
@@ -689,6 +689,12 @@ layout: two-cols-header
 ## Tell, Don't Ask, aka "Hollywood Principle"
 
 <br>
+
+<v-click>
+
+AKA "Respecter le principe d'encapsulation"
+</v-click>
+
 <br>
 <br>
 
