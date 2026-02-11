@@ -116,6 +116,7 @@ Il est encore temps d'appliquer la loi des deux pieds ;)
 
 -->
 
+
 ---
 layout: intro
 image: /images/Frodo_Baggins-house.jpg
@@ -125,15 +126,21 @@ image: /images/Frodo_Baggins-house.jpg
 
 ## Présentation de LegacyCorp
 
+---
+layout: image
+image: /images/ring-melting.jpg
+backgroundSize: 80%
+---
+
+# Les Anneaux de Pouvoir
 
 --- 
 layout: image
 image: /images/3_rings.jpeg
+backgroundSize: 90%
 --- 
 
-
-# 
-
+# 3 services pour les ops
 
 <!-- 
 3 services pour les ops
@@ -142,14 +149,14 @@ Lambda functions,
 Kubernetes
 -->
 
-
 --- 
 layout: image
 image: /images/7_rings.jpeg
+backgroundSize: 80%
 --- 
 
 
-# 
+# 7 anneaux pour les dev
 
 <!-- 
 7 services pour les développeurs
@@ -159,14 +166,16 @@ Mongo Redis Oracle GraphQL MySql, postgres, DynamoDB
 ---
 layout: image
 image: /images/9_rings.jpg
-backgroundSize: contain
+backgroundSize: 90%
 ---
 
-#
+# 9 anneaux pour les managers
 
 <!--
 
 9 services pour les managers
+
+plus facilement corrompus, à cause de leur proximité avec les humains et leur recherche de pouvoir
 
 Jira, 
 Confluence, 
@@ -178,8 +187,10 @@ SharePoint
 --- 
 layout: image
 image: /images/The_one_ring.png
-backgroundSize: contain
+backgroundSize: 40%
 ---
+
+# Un anneau pour les coupler tous 
 
 ---
 zoom: 1.2
@@ -247,7 +258,6 @@ Un monolithe si enchevêtré que personne n’ose plus y toucher…
 
 ✅ Le Monolithe Maudit 
 
-→ "Modifier une ligne = risque de tout casser."
 </v-click>
 
 
@@ -255,7 +265,6 @@ Un monolithe si enchevêtré que personne n’ose plus y toucher…
 
 ✅ Les Dépendances Invisibles 🕸️
 
-→ "Un changement dans le module de templates peut casser le module d'envoi de mails… sans que personne ne sache pourquoi."
 
 </v-click>
 
@@ -263,10 +272,19 @@ Un monolithe si enchevêtré que personne n’ose plus y toucher…
 
 ✅ La Dette Technique ⌛
 
-→ "Chaque nouvelle feature ajoute 10 bugs. Les devs passent 80% de leur temps à corriger."
 
 </v-click>
 
+<!--
+
+→ "Modifier une ligne = risque de tout casser."
+
+
+→ "Un changement dans le module de templates peut casser le module d'envoi de mails… sans que personne ne sache pourquoi."
+
+→ "Chaque nouvelle feature ajoute 10 bugs. Les devs passent 80% de leur temps à corriger."
+
+-->
 
 ---
 
@@ -279,25 +297,29 @@ If it works, don't fix it !
 
 ❌ On ne refactore plus
 
-→ La structure du code pourrit petit à petit
 </v-click>
 
 <v-click>
 
 ❌ On néglige la qualité
 
-→ On passe son temps à appliquer des pansements, on n'a pas le temps pour les changements profonds
 </v-click>
 
 <v-click>
 
 ❌ On ne peut plus rien planifier
 
-→ Les tickets restent dans un état "presque fini" pendant des semaines.
 </v-click>
 
+<!-- 
 
+→ La structure du code pourrit petit à petit
 
+→ On passe son temps à appliquer des pansements, on n'a pas le temps pour les changements profonds
+
+→ Les tickets restent dans un état "presque fini" pendant des semaines.
+
+-->
 
 --- 
 layout: image 
