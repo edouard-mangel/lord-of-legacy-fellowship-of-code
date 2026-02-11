@@ -93,11 +93,9 @@ zoom: 0.9
 # Gandalf le gris
 
 ## Engineering manager et mentor de Bilbo
-
+<br>
 
 - Contributeur Unix depuis le siècle dernier
-
-- Dernier dev de l'entreprise présent à sa création
 
 - A mené de nombreuses batailles contre la complexité
 
@@ -122,7 +120,7 @@ backgroundSize: contain
 
 # Aragorn
 
-## Le coach agile
+## Le coach agile (free-lance)
 
 - Personne ne sait d'où il vient
 
@@ -138,7 +136,9 @@ backgroundSize: contain
 
 <!--
 Le consultant qui débarque sur ton projet legacy.
-Il a une aura de mystère. Il a travaillé "chez des clients qu'il ne peut pas nommer".
+Il a une aura de mystère. 
+
+Il a travaillé "chez des clients qu'il ne peut pas nommer".
 -->
 
 
@@ -161,7 +161,7 @@ Nos amis pourront-ils agir malgré leur rigidité ?
 
 <!--
 
-Supposés cadrer les déploiements et assurer la qualité des livrables, 
-Les outils peuvent vite devenir des freins plutôt que des leviers de productivité
+A force d'avoir des bugs et des régressions, les managers ont utilisé les pouvoirs de leurs anneaux pour instaurer des process de plus en plus rigides.
+
 
 -->
