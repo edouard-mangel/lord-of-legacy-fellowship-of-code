@@ -225,7 +225,7 @@ On parle de couplage « fort » ou « serré » entre deux composants s’il
 
 ```mermaid
 graph LR
-  A[OrderService] -->|auth via| E[💍 UserService]
+  A[OrderService] -->|auth via| E[💍 UserService 💍]
   D[NotificationService] -->|contacts via| E
   E -->|dépend de| B[PaymentService]
   E -->|accède| C[InventoryService]
@@ -242,7 +242,7 @@ graph LR
   style B fill:#8B0000,stroke:#ff4444,color:#fff
   style C fill:#8B0000,stroke:#ff4444,color:#fff
   style D fill:#8B0000,stroke:#ff4444,color:#fff
-  style E fill:#DAA520,stroke:#FFD700,color:#000,stroke-width:3px
+  style E fill:#8B0000,stroke:#FFD700,color:#fff,stroke-width:3px
 ```
 
 <div class="text-center text-sm italic mt-2">Tous les services dépendent de UserService — l'Anneau Unique qui les lie tous.</div>
@@ -260,6 +260,7 @@ Un monolithe si enchevêtré que personne n’ose plus y toucher…
 
 </v-click>
 
+<br>
 
 <v-click>
 
@@ -267,6 +268,8 @@ Un monolithe si enchevêtré que personne n’ose plus y toucher…
 
 
 </v-click>
+
+<br>
 
 <v-click>
 
@@ -298,12 +301,14 @@ If it works, don't fix it !
 ❌ On ne refactore plus
 
 </v-click>
+<br>
 
 <v-click>
 
 ❌ On néglige la qualité
 
 </v-click>
+<br>
 
 <v-click>
 
