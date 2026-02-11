@@ -101,10 +101,10 @@ backgroundSize: contain
 ## Aragorn n'est pas un simple Scrum Master
 <br>
 
-## C'est l'héritier légitime du trône d'Isildur. 
+## Il est l'héritier du trône d'Isildur. 
 <br>
 
-## C'est l'architecte légitime du module de paiements. 
+## C'est lui l'architecte légitime du module de paiements. 
 
 
 ---
