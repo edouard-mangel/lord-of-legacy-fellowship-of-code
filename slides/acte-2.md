@@ -6,7 +6,12 @@ backgroundSize: contain
 
 # Acte II : Le Conseil
 
-## *Ou comment 4 heures de réunion n'aboutissent à rien*
+## *Ou comment 1 heure de réunion se transformer en 4*
+
+<!--
+Le Conseil d'Elrond, des responsables de différents domaines qui se réunissent pour décider du sort de l'Anneau Unique (la dépendance critique).
+
+--> 
 
 ---
 layout: image-right
@@ -47,7 +52,7 @@ backgroundSize: contain
 #### Sa complexité corrompt nos systèmes. Il devient plus puissant chaque jour.
 <br>
 
-#### Nous devons décider : que faire de l'Anneau ?"
+#### Nous devons décider : que faire de l'UserService ?"
 
 </v-click>
 
@@ -60,7 +65,7 @@ backgroundSize: contain
 
 # Boromir (Product Owner)
 
-## Pourquoi ne pas utiliser l'anneau ? 
+## Pourquoi ne pas l'utiliser à son plein potentiel ? 
 
 <br>
 
@@ -74,7 +79,7 @@ backgroundSize: contain
 
 # Aragorn (Coach agile externalisé)
 
-## L'anneau est trop dangereux, il faut le détruire !
+## L'anneau est trop dangereux, ça va se retourner contre nous !
 
 <br>
 
@@ -93,7 +98,7 @@ backgroundSize: contain
 ---
 layout: image-right
 image: /images/Legolas-upset.jpg
-backgroundSize: contain
+backgroundSize: 160%
 ---
 
 # Legolas (Dev Frontend)
@@ -115,11 +120,11 @@ backgroundSize: contain
 
 # Boromir (Product Owner)
 
-## Le module de paiements est un module critique, il n'a pas besoin d'un architecte. 
+## La team paiements est une feature team auto-organisée. 
 
 <br>
 
-## L'équipe paiement est autonome, elle n'a pas besoin d'un architecte "tour d'ivoire" pour faire son travail.
+## Elle n'a pas besoin d'un architecte "tour d'ivoire" pour faire son travail.
 
 --- 
 
@@ -212,7 +217,7 @@ layout: two-cols-header
 
 **Elrond clôture le Conseil :**
 
-*"C'est donc décidé, nous allons faire le refactoring nécessaire pour réduire notre dépendance à l'Anneau Unique."*
+*"C'est donc décidé, nous allons faire le refactoring nécessaire pour détruire le UserService."*
 
 
 ::left:: 

@@ -23,17 +23,14 @@ backgroundSize: 140%
 - Le chemin "évident"
 - La solution "by the book"
 - Architecture clean, patterns respectés
-- Test Driven Development, 
-- Domain-Driven Design, 
-- Behavior-Driven Development...
-
+- Test Driven Development !
 </v-click>
 
 <v-click>
 
 *"On va appliquer toutes les bonnes pratiques, ça ira super vite !"*
 
-*"En tout cas si j'en crois mon gourou Linkedin c'est dans la poche !"*
+*"En tout cas si j'en crois Linkedin c'est dans la poche !"*
 
 </v-click>
 
@@ -41,6 +38,28 @@ backgroundSize: 140%
 Caradhras c'est la solution propre. Le refacto complet. Le nouveau service bien designé.
 Mais ça prend trop de temps. Le business n'attend pas.
 -->
+
+---
+
+# Le Test Driven Development
+
+## Le cycle Red-Green-Refactor
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'fontSize': '20px' }}}%%
+flowchart LR
+    R["🔴 RED\nÉcrire un test\nqui échoue"]
+    G["🟢 GREEN\nÉcrire le minimum\nde code pour passer"]
+    RF["🔵 REFACTOR\nAméliorer le code\nsans casser le test"]
+
+    R -->|"Implémenter"| G
+    G -->|"Nettoyer"| RF
+    RF -->|"Nouveau test"| R
+
+    style R fill:#b91c1c,stroke:#fca5a5,color:#fff
+    style G fill:#15803d,stroke:#86efac,color:#fff
+    style RF fill:#1d4ed8,stroke:#93c5fd,color:#fff
+```
 
 ---
 layout: image-right
