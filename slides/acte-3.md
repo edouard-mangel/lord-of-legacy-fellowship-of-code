@@ -737,14 +737,17 @@ image: /images/balrog.jpg
 
 ## La faille de sécurité CVE 10
 
-<v-clicks>
+<v-click>
 
 - Il était là depuis le début
 - Les fondateurs savaient
 - Ils ont préféré ne pas y toucher
+
+<br>
+
 - *"Ils ont creusé trop profondément... et ont adopté les patterns de l'Anneau."*
 
-</v-clicks>
+</v-click>
 
 <v-click>
 
@@ -757,9 +760,12 @@ C'est une faille de sécurité impossible à patcher.
 </v-click>
 
 <!--
-Le Balrog, c'est la corruption de Sauron manifestée dans le code.
+Le Balrog, c'est l'over engineering qui rend le code impossible à maintenir.'
+
 Pas un bug qu'on peut fixer. Une décision architecturale prise il y a 15 ans.
+
 Elle a adopté la philosophie de l'Anneau : couplage centralisé, dépendances circulaires.
+
 C'est Sauron qui a gagné cette bataille-là, en 2008.
 -->
 
