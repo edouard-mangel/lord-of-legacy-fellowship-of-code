@@ -45,13 +45,34 @@ Mais ça prend trop de temps. Le business n'attend pas.
 
 ## Le cycle Red-Green-Refactor
 
+````md magic-move
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'fontSize': '20px' }}}%%
+flowchart LR
+    R["🔴 RED\nÉcrire un test\nqui échoue"]
+```
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'fontSize': '20px' }}}%%
+flowchart LR
+    R["🔴 RED\nÉcrire un test\nqui échoue"]
+    G["🟢 GREEN\nÉcrire le minimum\nde code pour passer"]
+    R -->|"Implémenter"| G
+```
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': { 'fontSize': '20px' }}}%%
 flowchart LR
     R["🔴 RED\nÉcrire un test\nqui échoue"]
     G["🟢 GREEN\nÉcrire le minimum\nde code pour passer"]
     RF["🔵 REFACTOR\nAméliorer le code\nsans casser le test"]
-
+    R -->|"Implémenter"| G
+    G -->|"Nettoyer"| RF
+```
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'fontSize': '20px' }}}%%
+flowchart LR
+    R["🔴 RED\nÉcrire un test\nqui échoue"]
+    G["🟢 GREEN\nÉcrire le minimum\nde code pour passer"]
+    RF["🔵 REFACTOR\nAméliorer le code\nsans casser le test"]
     R -->|"Implémenter"| G
     G -->|"Nettoyer"| RF
     RF -->|"Nouveau test"| R
@@ -60,6 +81,7 @@ flowchart LR
     style G fill:#15803d,stroke:#86efac,color:#fff
     style RF fill:#1d4ed8,stroke:#93c5fd,color:#fff
 ```
+````
 
 ---
 layout: image-right
@@ -331,10 +353,22 @@ public void AdultUser_CanRegisterForVoting()
 }
 ```
 
+<br>
+<v-click>
+
+## Le nom des tests peut participer à la documentation vivante du projet.
+<br>
+<br>
+
+## On peut aussi parler de spécifications exécutables. 
+
+</v-click>
+
 ---
-
-
-<!-- layout: image-right --> 
+layout: image-right
+image: /images/moria-entrance2.jpg    
+backgroundSize: 80em
+---
 
 # La Moria
 
