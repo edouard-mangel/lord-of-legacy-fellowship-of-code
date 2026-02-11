@@ -7,6 +7,10 @@
 *Ou comment se relever après le legacy*
 
 ---
+layout: image-right
+image: /images/Lothlorien.png
+backgroundSize: 60em
+---
 
 # Lothlórien
 

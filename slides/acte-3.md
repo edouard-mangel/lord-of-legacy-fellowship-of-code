@@ -45,43 +45,44 @@ Mais ça prend trop de temps. Le business n'attend pas.
 
 ## Le cycle Red-Green-Refactor
 
-````md magic-move
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'fontSize': '20px' }}}%%
-flowchart LR
-    R["🔴 RED\nÉcrire un test\nqui échoue"]
-```
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'fontSize': '20px' }}}%%
-flowchart LR
-    R["🔴 RED\nÉcrire un test\nqui échoue"]
-    G["🟢 GREEN\nÉcrire le minimum\nde code pour passer"]
-    R -->|"Implémenter"| G
-```
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'fontSize': '20px' }}}%%
-flowchart LR
-    R["🔴 RED\nÉcrire un test\nqui échoue"]
-    G["🟢 GREEN\nÉcrire le minimum\nde code pour passer"]
-    RF["🔵 REFACTOR\nAméliorer le code\nsans casser le test"]
-    R -->|"Implémenter"| G
-    G -->|"Nettoyer"| RF
-```
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'fontSize': '20px' }}}%%
-flowchart LR
-    R["🔴 RED\nÉcrire un test\nqui échoue"]
-    G["🟢 GREEN\nÉcrire le minimum\nde code pour passer"]
-    RF["🔵 REFACTOR\nAméliorer le code\nsans casser le test"]
-    R -->|"Implémenter"| G
-    G -->|"Nettoyer"| RF
-    RF -->|"Nouveau test"| R
+<div class="flex items-center justify-center gap-2 mt-12">
 
-    style R fill:#b91c1c,stroke:#fca5a5,color:#fff
-    style G fill:#15803d,stroke:#86efac,color:#fff
-    style RF fill:#1d4ed8,stroke:#93c5fd,color:#fff
-```
-````
+<v-click>
+<div class="px-6 py-4 rounded-xl text-center text-white font-bold" style="background: #b91c1c; min-width: 200px;">
+  <div class="text-3xl mb-2">🔴 RED</div>
+  <div class="text-sm font-normal">Écrire un test<br/>qui échoue</div>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-3xl text-gray-400 mx-2">→</div>
+</v-click>
+
+<v-click>
+<div class="px-6 py-4 rounded-xl text-center text-white font-bold" style="background: #15803d; min-width: 200px;">
+  <div class="text-3xl mb-2">🟢 GREEN</div>
+  <div class="text-sm font-normal">Écrire le minimum<br/>de code pour passer</div>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-3xl text-gray-400 mx-2">→</div>
+</v-click>
+
+<v-click>
+<div class="px-6 py-4 rounded-xl text-center text-white font-bold" style="background: #1d4ed8; min-width: 200px;">
+  <div class="text-3xl mb-2">🔵 REFACTOR</div>
+  <div class="text-sm font-normal">Améliorer le code<br/>sans casser le test</div>
+</div>
+</v-click>
+
+</div>
+
+<v-click>
+<div class="text-center mt-6 text-xl text-gray-400 italic">
+  ↩ Recommencer avec un nouveau test
+</div>
+</v-click>
 
 ---
 layout: image-right
@@ -495,6 +496,8 @@ Les code smells, c'est un peu comme les odeurs dans la cuisine.
 
 
 ## Les signes qui ne trompent pas
+<br>
+<br>
 
 <v-clicks>
 
@@ -505,12 +508,10 @@ Les code smells, c'est un peu comme les odeurs dans la cuisine.
 - La logique métier est dispersée dans tout le code, au lieu d'être centralisée. 
 
 - Loi de Déméter violée : les objets ne parlent qu'à leurs amis proches, pas à des étrangers.
+
 </v-clicks>
 
 ---
-layout: two-cols-header
---- 
-
 
 # Exemple 💩
 
@@ -532,8 +533,130 @@ public class UserValidator
 }
 
 ```
+---
+zoom: 0.9
+--- 
+
+# Don't Repeat Yourself, what could go wrong ? 
+
+````md magic-move
+```csharp
+public class User
+{
+    public int Id {get; private set;}
+    public int Age { get; set; }
+
+    /* ... Plein de code ... */
+}
+
+public class UserValidator
+{
+    public bool CanVote(User user) => theOneRing.Instance().getUser(user.Id).user.Age >= 18;
+    public bool CanDrive(User user) => theOneRing.Instance().getUser(user.Id).user.Age >= 18;
+    public bool CanBuyAlcohol(User user) => theOneRing.Instance().getUser(user.Id).user.Age >= 18;
+
+    public bool IsValid(User user) => CanVote(user) && CanDrive(user) && CanBuyAlcohol(user);
+}
+```
+```csharp
+public class User
+{
+    public int Id {get; private set;}
+    public int Age { get; set; }
+
+    /* ... Plein de code ... */
+}
+
+public class UserValidator
+{
+    private int GetAge(User user) => theOneRing.Instance().getUser(user.Id).user.Age;
+
+    public bool CanVote(User user) => GetAge(user) >= 18;
+    public bool CanDrive(User user) => GetAge(user) >= 18;
+    public bool CanBuyAlcohol(User user) => GetAge(user) >= 18;
+
+    public bool IsValid(User user) => CanVote(user) && CanDrive(user) && CanBuyAlcohol(user);
+}
+```
+```csharp
+public class User
+{
+    public int Id {get; private set;}
+    public int Age { get; set; }
+
+    /* ... Plein de code ... */
+}
+
+public class UserValidator
+{
+    private int GetAge(User user) => theOneRing.Instance().getUser(user.Id).user.Age;
+
+    private bool IsMajor(User user) => GetAge(user) >= 18;
+
+    public bool CanVote(User user) => IsMajor(user);
+    public bool CanDrive(User user) => IsMajor(user);
+    public bool CanBuyAlcohol(User user) => IsMajor(user);
+
+    public bool IsValid(User user) => IsMajor(user);
+}
+```
+```
+```csharp
+public class User
+{
+    public int Id {get; private set;}
+    public int Age { get; set; }
+
+    /* ... Plein de code ... */
+}
+
+public class UserValidator
+{
+    private int GetAge(User user) => theOneRing.Instance().getUser(user.Id).user.Age;
+
+    private bool IsMajor(User user) => GetAge(user) >= 18;
+
+    public bool IsValid(User user) => IsMajor(user);
+}
+```
+````
+
+--- 
+
+# Vous le saviez vous, qu'on peut avoir le permis à 17 ans maintenant ? 
+
+
+## Fonctionne aussi avec : "Notre produit fonctionne, on va faire une croissance à l'international !"
+
+
+```csharp
+public class User
+{
+    public int Id {get; private set;}
+    public int Age { get; set; }
+    public string Country { get; set; }
+}
+
+public class UserValidator
+{
+    private int GetAge(User user) => theOneRing.Instance().getUser(user.Id).user.Age;
+
+    private bool isAmerican(User user) => user.Country == "US";
+
+    public bool CanVote(User user) => GetAge(user) >= 18;
+    public bool CanDrive(User user) => GetAge(user) >= (isAmerican(user) ? 16 : 18);
+    public bool CanBuyAlcohol(User user) => GetAge(user) >= (isAmerican(user) ? 21 : 18);
+
+    public bool IsValid(User user) => CanVote(user) && CanDrive(user) && CanBuyAlcohol(user);
+}
+```
+
+
 
 ---
+layout: image-right
+image: /images/Horde.png
+--- 
 
 # Les gobelins
 
@@ -556,6 +679,54 @@ Les bugs dans un framework legacy.
 Tu touches une ligne, trois régressions.
 Ils sont partout, dans tous les recoins.
 -->
+
+--- 
+layout: two-cols-header
+---
+
+# Un refacto nécessaire
+
+## Tell, Don't Ask, aka "Hollywood Principle"
+
+<br>
+<br>
+<br>
+
+::left::
+
+```csharp
+public abstract class User
+{
+    public int Id { get; private set; }
+    private int Age { get; set; }
+
+    protected abstract int VotingAge { get; }
+    protected abstract int DrivingAge { get; }
+    protected abstract int DrinkingAge { get; }
+
+    public bool CanVote() => Age >= VotingAge;
+    public bool CanDrive() => Age >= DrivingAge;
+    public bool CanBuyAlcohol() => Age >= DrinkingAge;
+}
+```
+
+::right::
+
+```csharp
+public class FrenchUser : User
+{
+    protected override int VotingAge => 18;
+    protected override int DrivingAge => 17;
+    protected override int DrinkingAge => 18;
+}
+
+public class AmericanUser : User
+{
+    protected override int VotingAge => 18;
+    protected override int DrivingAge => 16;
+    protected override int DrinkingAge => 21;
+}
+```
 
 ---
 layout: image-right
