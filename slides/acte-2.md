@@ -6,7 +6,7 @@ backgroundSize: contain
 
 # Acte II : Le Conseil
 
-## *Ou comment 1 heure de réunion se transformer en 4*
+## *Ou comment 1 heure de réunion se transforme en 4*
 
 <!--
 Le Conseil d'Elrond, des responsables de différents domaines qui se réunissent pour décider du sort de l'Anneau Unique (la dépendance critique).
@@ -192,7 +192,7 @@ Mission confiée à une petite équipe (Frodon + support).
 - Sauron sera définitivement découplé
 - Risque : personne n'est jamais revenu du Mordor
 - Budget : 9 personnes, durée indéterminée
-- **Success metric**: Destruction de OneRing.java en prod
+- **Success metric**: Destruction de OneRing.cs en prod
 
 ## Alternatives rejetées
 - "Utiliser l'Anneau contre Sauron" (Boromir) → L'Anneau sert toujours Sauron

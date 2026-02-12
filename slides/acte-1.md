@@ -61,12 +61,12 @@ zoom: 1.5
 
 # L'héritage de Bilbo
 
-```text {*|3|5|7|8-9}
+```text {*|8-9|7|5|3}
 ├── src/
 │   ├── utils/
-│   │   └── OneRing.java          // NE PAS TOUCHER
+│   │   └── OneRing.cs             // NE PAS TOUCHER
 │   ├── legacy/
-│   │   └── BilboMagic.java      // Personne ne sait ce que ça fait
+│   │   └── BilboMagic.cs         // Personne ne sait ce que ça fait
 │   └── config/
 │       └── secrets.properties    // TODO: move to vault (2011)
 ├── README.md                      // Dernière mise à jour: 2014
@@ -75,7 +75,7 @@ zoom: 1.5
 
 <v-click>
 
-Frodon : *"Gandalf, c'est quoi ce OneRing.java ?"*
+Frodon : *"Gandalf, c'est quoi ce OneRing.cs ?"*
 
 </v-click>
 
@@ -83,6 +83,60 @@ Frodon : *"Gandalf, c'est quoi ce OneRing.java ?"*
 Qui a déjà hérité d'un projet avec un fichier "NE PAS TOUCHER" ?
 -->
 
+---
+zoom: 1.2
+---
+
+# Frodon ouvre `OneRing.cs`
+
+```csharp {*|1-2|4|6-8|10-11|13-14|16-19|21-22}{lines: true}
+// TODO: refactor un jour (Bilbo, 2009)
+// FIXME: ne surtout pas renommer cette classe
+public class OneRing : AbstractBaseManagerServiceUtil {
+
+    public static object DoStuff(object x, object y, int mode) {
+        var session = SessionManager.Instance.GetCurrent();
+        var mail = new SmtpMailService("smtp.mordor.io", 587);
+
+        if (mode == 1) { return x; }
+        else if (mode == 42) { return null; } // ne pas supprimer
+
+        string temp = ((string)x).Substring(0,
+            int.Parse((string)y) > 0 ? int.Parse((string)y) : 1);
+
+        new SqlCommand("SELECT * FROM rings WHERE owner = '"
+            + session.GetUser().GetTeam().GetManager().Name + "'",
+            DbConnectionPool.Instance.GetConnection())
+            .ExecuteReader();
+        mail.Send(session.GetUser().Email, "Ring used", temp);
+    }
+}
+```
+
+<v-click>
+
+Frodon : *"Mais... pourquoi ça `extends AbstractBaseManagerServiceUtil` ?"*
+
+</v-click>
+
+<!--
+On cumule ici un maximum de code smells classiques :
+- Commentaires TODO/FIXME vieux de 15 ans
+- God class avec un nom à rallonge
+- Paramètres Object partout (pas de typage)
+- Magic numbers (42)
+- Cast non sécurisés
+- println de debug en prod
+- Méthode "doStuff" qui ne veut rien dire
+
+Code smells de couplage :
+- Singletons partout (DatabasePool.getInstance(), SessionManager.getInstance())
+- Instanciation directe d'un service concret (new SmtpMailService) avec config en dur
+- SQL brut dans la logique métier (pas de séparation des couches)
+- Violation de la Loi de Déméter : session.getUser().getTeam().getManager().getName()
+- La classe fait TOUT : accès BDD, envoi de mails, logique métier
+- Injection SQL en bonus
+-->
 
 ---
 layout: image-right
