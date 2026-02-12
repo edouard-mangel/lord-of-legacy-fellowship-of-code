@@ -149,40 +149,6 @@ Un bon test doit donc :
 </v-clicks>
 
 ---
-
-# Plus le choix 
-La refonte complète est trop risquée, trop longue, et a déjà échoué.
-
-## D'une refonte globale à un refactoring progressif
-
-<!-- Image suggestion : Gandalf inquiet -->
-
-*"Il y a un autre chemin..."*
-
-<v-click>
-
-*"Le framework maison."*
-
-</v-click>
-
-<v-click>
-
-**Aragorn** : *"Tu sais ce qui s'y cache. Tu sais ce que les développeurs ont réveillé dans les profondeurs."*
-
-</v-click>
-
-<v-click>
-
-**Gandalf** : *"J'ai lead cette équipe il y a 40 ans. Je connais les chemins."*
-
-</v-click>
-
-<!--
-Gandalf était le tech lead de l'équipe Framework.
-Il y a longtemps. Très longtemps.
--->
-
----
 layout: two-cols-header
 zoom: 0.9
 ---
@@ -311,6 +277,42 @@ On teste le scénario métier, pas les méthodes individuelles.
 On peut refactorer UserValidator sans casser les tests.
 -->
 
+
+---
+
+# Plus le choix 
+La refonte complète est trop risquée, trop longue, et a déjà échoué.
+
+## D'une refonte globale à un refactoring progressif
+
+<!-- Image suggestion : Gandalf inquiet -->
+
+*"Il y a un autre chemin..."*
+
+<v-click>
+
+*"Le framework maison."*
+
+</v-click>
+
+<v-click>
+
+**Aragorn** : *"Tu sais ce qui s'y cache. Tu sais ce que les développeurs ont réveillé dans les profondeurs."*
+
+</v-click>
+
+<v-click>
+
+**Gandalf** : *"J'ai lead cette équipe il y a 40 ans. Je connais les chemins."*
+
+</v-click>
+
+<!--
+Gandalf était le tech lead de l'équipe Framework.
+Il y a longtemps. Très longtemps.
+-->
+
+
 ---
 layout: two-cols-header
 zoom: 0.8
@@ -364,6 +366,7 @@ public void AdultUser_CanRegisterForVoting()
 ## On peut aussi parler de spécifications exécutables. 
 
 </v-click>
+
 
 ---
 layout: image-right
