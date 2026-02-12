@@ -504,9 +504,9 @@ Les code smells, c'est un peu comme les odeurs dans la cuisine.
 
 <v-clicks>
 
-- Classes qui importent des dizaines de packages différents 
+- Classes qui importent des dizaines de packages différents, de tous types (DB, HTTP, utils, etc.) 
 
-- Classes qui font appel à des méthodes d'autres classes sans que ce soit évident. 
+- Les classes métier instancient des classes techniques. 
 
 - La logique métier est dispersée dans tout le code, au lieu d'être centralisée. 
 
