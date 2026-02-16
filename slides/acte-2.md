@@ -201,7 +201,10 @@ Mission confiée à une petite équipe (Frodon + support).
 ```
 
 <!--
-L'ADR (Architecture Decision Record) du Conseil d'Elrond.
+
+Préciser que les compromis c'est aussi parfois à prendre sur ce que je raconte dans cette présentation. 
+
+
 -->
 
 

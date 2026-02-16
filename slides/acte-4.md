@@ -198,7 +198,7 @@ layout: intro
 1. **La Comté** → Profitez du greenfield, ça ne dure pas
 2. **L'Anneau** → Le couplage non maîtrisé est un poison lent
 3. **La Moria** → Le framework maison vous rattrapera
-4. **Le Balrog** → La dette technique existentielle existe
+4. **Le Balrog** → Le couplage fort à la BDD est un piège mortel (Dependency Inversion)
 5. **Lothlórien** → Prenez le temps de stabiliser
 6. **Amon Hen** → Parfois, il faut se séparer pour avancer
 

@@ -272,9 +272,9 @@ public class UserRegistrationTests
 </v-clicks>
 
 <!--
-Les tests couplés au comportement.
-On teste le scénario métier, pas les méthodes individuelles.
-On peut refactorer UserValidator sans casser les tests.
+
+PRECISER QUE C'EST UNE GENERALITE, QUE PARFOIS C'EST OK D'AVOIR DES TESTS UNITAIRES POUR LES CAS COMPLEXES
+
 -->
 
 
@@ -629,8 +629,14 @@ public class UserValidator
 
 # Vous le saviez vous, qu'on peut avoir le permis à 17 ans maintenant ? 
 
+<v-click>
+
 
 ## Fonctionne aussi avec : "Notre produit fonctionne, on va faire une croissance à l'international !"
+
+</v-click>
+
+<v-click>
 
 
 ```csharp
@@ -654,6 +660,8 @@ public class UserValidator
     public bool IsValid(User user) => CanVote(user) && CanDrive(user) && CanBuyAlcohol(user);
 }
 ```
+
+</v-click>
 
 
 
@@ -745,7 +753,7 @@ image: /images/balrog.jpg
 
 # Le Balrog
 
-## La faille de sécurité CVE 10
+## Le couplage direct à la base de production
 
 <v-click>
 
@@ -755,7 +763,7 @@ image: /images/balrog.jpg
 
 <br>
 
-- *"Ils ont creusé trop profondément... et ont adopté les patterns de l'Anneau."*
+- *"Ils ont creusé trop profondément... et ont couplé tous les services directement à la base Oracle de prod."*
 
 </v-click>
 
@@ -763,18 +771,20 @@ image: /images/balrog.jpg
 
 **Ce n'est pas juste une dette technique.**
 
-C'est une faille de sécurité impossible à patcher.
+C'est un couplage si profond qu'aucun service ne peut fonctionner sans la base de production.
 
 *"You shall not pass... this code review."*
 
 </v-click>
 
 <!--
-Le Balrog, c'est l'over engineering qui rend le code impossible à maintenir.'
+Le Balrog, c'est le couplage direct à la base de production.
 
 Pas un bug qu'on peut fixer. Une décision architecturale prise il y a 15 ans.
 
-Elle a adopté la philosophie de l'Anneau : couplage centralisé, dépendances circulaires.
+Tous les services font des requêtes SQL directement dans la base de prod. Pas d'abstraction, pas de repository pattern, pas de couche d'accès aux données.
+
+On ne peut pas tester sans la base de prod. On ne peut pas refactorer sans risquer de casser la prod. On ne peut pas migrer vers une autre base.
 
 C'est Sauron qui a gagné cette bataille-là, en 2008.
 -->
@@ -803,4 +813,123 @@ backgroundSize: contain
 ---
 
 # "Fly, you fools!"
+
+---
+zoom: 0.9
+---
+
+# La leçon du Balrog
+
+## Dependency Inversion Principle
+
+<br>
+
+*"Les modules de haut niveau ne doivent pas dépendre des modules de bas niveau. Les deux doivent dépendre d'abstractions."*
+
+— Robert C. Martin
+
+<v-click>
+
+Le problème du Balrog : tous les services dépendent **directement** de la base Oracle.
+
+</v-click>
+
+<v-click>
+
+```mermaid
+graph TD
+  A[OrderService] -->|SQL direct| DB[(🔥 Oracle Prod 🔥)]
+  B[UserService] -->|SQL direct| DB
+  C[NotificationService] -->|SQL direct| DB
+  D[PaymentService] -->|SQL direct| DB
+
+  style DB fill:#8B0000,stroke:#FFD700,color:#fff,stroke-width:3px
+```
+
+</v-click>
+
+---
+zoom: 0.9
+layout: two-cols-header
+
+---
+
+# Inverser la dépendance
+
+## Dépendre d'abstractions, pas de la base de prod
+<br>
+<br>
+
+
+::left::
+
+````md magic-move
+```csharp
+// ❌ Couplage direct au Balrog
+public class OrderService
+{
+    public Order GetOrder(int id)
+    {
+        var conn = new OracleConnection(
+            "Data Source=PROD_DB;...");
+        var cmd = new OracleCommand(
+            "SELECT * FROM Orders WHERE Id = @id",
+            conn);
+        // ... SQL partout, Oracle partout
+    }
+}
+```
+```csharp
+// ✅ Dependency Inversion
+public interface IOrderRepository
+{
+    Order GetById(int id);
+}
+
+public class OrderService
+{
+    private readonly IOrderRepository _repo;
+
+    public OrderService(IOrderRepository repo)
+        => _repo = repo;
+
+    public Order GetOrder(int id)
+        => _repo.GetById(id);
+}
+```
+````
+
+::right:: 
+
+<v-click>
+
+```mermaid
+graph TD
+  A[OrderService] -->|dépend de| I[IOrderRepository]
+  B[UserService] -->|dépend de| J[IUserRepository]
+  I -.->|implémenté par| DB[(Oracle Prod)]
+  I -.->|ou par| MOCK[(InMemory pour tests)]
+  J -.->|implémenté par| DB
+  J -.->|ou par| MOCK
+
+  style I fill:#15803d,stroke:#fff,color:#fff
+  style J fill:#15803d,stroke:#fff,color:#fff
+```
+
+</v-click>
+
+<!--
+Le Dependency Inversion Principle, c'est le "You shall not pass" de Gandalf.
+
+On met une abstraction (interface) entre le code métier et la base de données.
+Le code métier ne sait même pas qu'Oracle existe.
+
+Résultat :
+- On peut tester sans la base de prod
+- On peut changer de base de données sans toucher au code métier
+- On peut mocker les données pour les tests
+
+C'est exactement ce que Gandalf fait : il se met entre la Communauté et le Balrog.
+Il crée une abstraction. "You shall not pass" = l'interface qui protège le code métier.
+-->
 
