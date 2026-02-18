@@ -538,7 +538,7 @@ public class UserValidator
 
 ```
 ---
-zoom: 0.9
+zoom: 1.15
 --- 
 
 # Don't Repeat Yourself, what could go wrong ? 
